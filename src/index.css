@@ -1,0 +1,12 @@
+@import "tailwindcss";
+:root {
+  color-scheme: only light;
+}
+
+input {
+    outline: none;
+}
+
+select {
+    outline: none;
+}
