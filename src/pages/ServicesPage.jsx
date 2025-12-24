@@ -1,9 +1,11 @@
 import React from 'react';
 
+import DynamicServiceManager from '../components/DynamicServiceManager';
+
 const ServicesPage = () => {
     return (
         <div>
-            amiiiiiii evannnnnn
+            <DynamicServiceManager />
         </div>
     );
 }
