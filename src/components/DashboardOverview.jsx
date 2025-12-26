@@ -26,7 +26,7 @@ const StatCard = ({ title, value, percentage, icon: Icon }) => {
 
 const DashboardOverview = () => {
   const stats = [
-    { title: "New Users", value: "560", percentage: "3.44", icon: Users },
+    { title: "All Users", value: "560", percentage: "3.44", icon: Users },
     {
       title: "Total Providers",
       value: "150",

@@ -29,11 +29,11 @@ const UserOverviewChart = () => {
   return (
     <div className="w-full bg-[#EFE6FD1A] p-6  rounded-2xl border border-[#6200EE] ">
       {/* Chart Container */}
-      <div className="h-[300px] w-full">
+      <div className="h-[300px] w-full mt-10">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
             data={data}
-            margin={{ top: 10, right: 10, left: -20, bottom: 0 }}
+            margin={{ top: 0, right: 10, left: -20, bottom: 0 }}
           >
             <defs>
               {/* This creates the purple gradient fill seen in your image */}
@@ -88,7 +88,7 @@ const UserOverviewChart = () => {
       </div>
 
       {/* Footer Section */}
-      <div className="flex justify-between items-center mt-6">
+      <div className="flex justify-between items-center mt-13">
         <h2 className="text-xl font-bold text-[#6200EE]">User Overview</h2>
         <div className="relative inline-block">
           <select
@@ -98,9 +98,11 @@ const UserOverviewChart = () => {
             defaultValue="2025"
           >
             <option value="2025">2025</option>
-            <option value="2024">2024</option>
-            <option value="2023">2023</option>
-            <option value="2022">2022</option>
+            <option value="2024">2026</option>
+            <option value="2023">2027</option>
+            <option value="2022">2028</option>
+            <option value="2022">2029</option>
+            <option value="2022">2030</option>
           </select>
 
           {/* Chevron */}
