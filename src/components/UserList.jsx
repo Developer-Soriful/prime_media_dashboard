@@ -55,7 +55,7 @@ const UserList = () => {
 
   return (
     <div className="mr-7 font-nunito min-h-screen">
-      <h2 className="text-2xl font-bold mb-4 text-[#1E1E1E]">Booked</h2>
+
 
       <div className="flex items-center gap-4 mb-6">
         <div className="relative w-fit">
