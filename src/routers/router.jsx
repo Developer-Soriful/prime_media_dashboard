@@ -32,7 +32,7 @@ const router = createBrowserRouter([
     element: <ResetPassword />
   },
   {
-    path: "/",
+    path: "/dashboard",
     element: <ProtectedRoute>
       <DashboardLayout />
     </ProtectedRoute>,

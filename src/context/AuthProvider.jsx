@@ -6,12 +6,9 @@ const AuthContext = createContext(null);
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
-
-    // Check for user on mount
     useEffect(() => {
         const checkUser = async () => {
             const token = localStorage.getItem("authToken");
-
             if (token) {
                 try {
                     const res = await api.get("/users/me");
@@ -34,22 +31,20 @@ export const AuthProvider = ({ children }) => {
     const login = async (email, password) => {
         try {
             const res = await api.post("/auth/login", { email, password });
-            console.log("Login API Response:", res); // DEBUG LOG
+            console.log("Login API Response:", res);
 
             if (res.success && res.data) {
                 const token = res.data.session?.accessToken || res.data.token || res.data.session?.token;
 
                 if (token) {
                     localStorage.setItem("authToken", token);
-                    // After login, fetch the user details immediately
                     const userRes = await api.get("/users/me");
-                    console.log("User Details Response:", userRes); // DEBUG LOG
+                    console.log("User Details Response:", userRes);
                     setUser(userRes.data?.user || userRes.data || userRes);
                 } else {
                     console.warn("Token validation failed. Structure:", res);
                 }
             } else if (res.token) {
-                // Fallback for flat structure
                 localStorage.setItem("authToken", res.token);
                 const userRes = await api.get("/users/me");
                 setUser(userRes.data);
@@ -58,7 +53,7 @@ export const AuthProvider = ({ children }) => {
             }
         } catch (error) {
             console.error("Login failed:", error);
-            throw error; // Let the component handle the error UI
+            throw error;
         }
     };
 
@@ -76,8 +71,12 @@ export const AuthProvider = ({ children }) => {
         );
     }
 
+    const updateUser = (userData) => {
+        setUser(userData);
+    };
+
     return (
-        <AuthContext.Provider value={{ user, isLoading, login, logout }}>
+        <AuthContext.Provider value={{ user, isLoading, login, logout, updateUser }}>
             {children}
         </AuthContext.Provider>
     );

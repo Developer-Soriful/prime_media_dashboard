@@ -38,7 +38,7 @@ const LoginSection = () => {
         title: "Login Successful",
         message: "Welcome back! You have successfully logged in.",
         actionLabel: "Go to Dashboard",
-        onAction: () => navigate("/"),
+        onAction: () => navigate("/dashboard"),
       });
 
     } catch (error) {
