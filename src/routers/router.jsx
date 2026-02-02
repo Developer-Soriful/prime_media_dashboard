@@ -12,10 +12,11 @@ import SettingsPage from "../pages/SettingsPage";
 import ProfilePage from "../pages/ProfilePage";
 import PasswordPage from "../pages/PasswordPage";
 import VerificationSection from "../components/VerificationSection";
+import ProtectedRoute from "./ProtectedRoute";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/login",
     element: <SignIn />,
   },
   {
@@ -31,8 +32,10 @@ const router = createBrowserRouter([
     element: <ResetPassword />
   },
   {
-    path: "dashboard",
-    element: <DashboardLayout />,
+    path: "/",
+    element: <ProtectedRoute>
+      <DashboardLayout />
+    </ProtectedRoute>,
     children: [
       {
         index: true,
@@ -66,7 +69,7 @@ const router = createBrowserRouter([
         path: "password",
         element: <PasswordPage />
       },
-    ] 
+    ]
   }
 ]);
 
