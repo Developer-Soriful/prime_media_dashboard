@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { Edit3, X } from "lucide-react";
 import { Link } from "react-router";
-import { ButtonLoader } from "./common/Loader";
-import { useAuth } from "../context/AuthProvider";
+import { ButtonLoader, PageLoader } from "./common/Loader";
 import images from "../assets/images";
 import api from "../services/api";
 import StatusModal from "./modal/StatusModal";
@@ -10,13 +9,15 @@ import StatusModal from "./modal/StatusModal";
 const ProfileSection = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
-  const { user, updateUser } = useAuth();
+  const [isLoading, setIsLoading] = useState(true);
+  const [profileData, setProfileData] = useState(null);
 
   const [userData, setUserData] = useState({
-    name: user?.name || "",
-    email: user?.email || "",
-    phone: user?.phone || "",
-    role: user?.role || "",
+    fullName: "",
+    email: "",
+    phoneNumber: "",
+    role: "",
+    profilePicture: "",
   });
 
   const [modal, setModal] = useState({
@@ -28,16 +29,34 @@ const ProfileSection = () => {
     onAction: null,
   });
 
+  // Fetch profile data on mount
   useEffect(() => {
-    if (user) {
-      setUserData({
-        name: user.name || "",
-        email: user.email || "",
-        phone: user.phone || "",
-        role: user.role || "",
-      });
-    }
-  }, [user]);
+    const fetchProfile = async () => {
+      setIsLoading(true);
+      try {
+        const response = await api.get("/admin/profile");
+        console.log("Profile Data:", response.data);
+
+        // response.data is directly the user object
+        const data = response.data;
+        setProfileData(data);
+
+        setUserData({
+          fullName: data.profile?.fullName || "",
+          email: data.email || "",
+          phoneNumber: data.profile?.phoneNumber || data.phone || "",
+          role: data.role || "",
+          profilePicture: data.profile?.profilePicture || "",
+        });
+      } catch (error) {
+        console.error("Failed to fetch profile:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchProfile();
+  }, []);
 
   const closeModal = () => {
     setModal((prev) => ({ ...prev, isOpen: false }));
@@ -47,27 +66,41 @@ const ProfileSection = () => {
     setIsSaving(true);
 
     try {
-      const response = await api.put("/users/me/profile", userData);
+      const response = await api.put("/admin/profile", {
+        fullName: userData.fullName,
+        phoneNumber: userData.phoneNumber,
+      });
+
       console.log("Profile Update Response:", response);
-      if (response.success) {
-        updateUser(response.data);
-        setModal({
-          isOpen: true,
-          type: "success",
-          title: "Profile Updated",
-          message: "Your profile information has been updated successfully.",
-          actionLabel: "OK",
-          onAction: () => {
-            closeModal();
-            setIsEditing(false);
-          },
-        });
-      }
+
+      // response.data is directly the updated user object
+      const data = response.data;
+      setProfileData(data);
+
+      setUserData({
+        fullName: data.profile?.fullName || "",
+        email: data.email || "",
+        phoneNumber: data.profile?.phoneNumber || data.phone || "",
+        role: data.role || "",
+        profilePicture: data.profile?.profilePicture || "",
+      });
+
+      setModal({
+        isOpen: true,
+        type: "success",
+        title: "Profile Updated",
+        message: "Your profile information has been updated successfully.",
+        actionLabel: "OK",
+        onAction: () => {
+          closeModal();
+          setIsEditing(false);
+        },
+      });
     } catch (error) {
       console.error("Update failed:", error);
       let errorMessage = "Failed to update profile. Please try again.";
-      if (error.response) {
-        errorMessage = error.response.data.message || errorMessage;
+      if (error.response?.data?.message) {
+        errorMessage = error.response.data.message;
       }
 
       setModal({
@@ -88,6 +121,10 @@ const ProfileSection = () => {
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
   };
+
+  if (isLoading) {
+    return <PageLoader />;
+  }
 
   return (
     <div className=" mx-auto p-2 mr-10 ">
@@ -132,7 +169,7 @@ const ProfileSection = () => {
         <div className="w-full md:w-1/3 flex flex-col items-center p-6 border border-gray-100 rounded-2xl bg-gray-50/50">
           <div className="relative">
             <img
-              src={user?.image || images.avatar}
+              src={userData.profilePicture || images.avatar}
               alt="Profile"
               className="w-32 h-32 rounded-full border-4 border-white shadow-md object-cover"
             />
@@ -145,12 +182,12 @@ const ProfileSection = () => {
         {/* NAME FIELD */}
         <div className="w-full md:w-2/3 space-y-6">
           <div>
-            <label className="block text-gray-600 mb-2 font-medium">Name</label>
+            <label className="block text-gray-600 mb-2 font-medium">Full Name</label>
             <input
               type="text"
-              name="name"
+              name="fullName"
               disabled={!isEditing}
-              value={userData.name}
+              value={userData.fullName}
               onChange={handleChange}
               className={`w-full p-3 rounded-lg border transition-all ${isEditing
                 ? "border-indigo-400 bg-white"
@@ -166,13 +203,10 @@ const ProfileSection = () => {
             <input
               type="email"
               name="email"
-              disabled={!isEditing}
+              disabled={true}
               value={userData.email}
               onChange={handleChange}
-              className={`w-full p-3 rounded-lg border transition-all ${isEditing
-                ? "border-indigo-400 bg-white"
-                : "border-gray-200 bg-gray-50"
-                } outline-none`}
+              className="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 outline-none cursor-not-allowed"
             />
           </div>
           {/* PHONE NUMBER FIELD */}
@@ -180,22 +214,17 @@ const ProfileSection = () => {
             <label className="block text-gray-600 mb-2 font-medium">
               Phone Number
             </label>
-            <div className="flex gap-2">
-              <div className="flex items-center gap-2 bg-indigo-100 px-3 py-2 rounded-lg border border-indigo-200">
-                <span className="text-sm font-bold text-indigo-700">🇺🇸 +1</span>
-              </div>
-              <input
-                type="text"
-                name="phone"
-                disabled={!isEditing}
-                value={userData.phone}
-                onChange={handleChange}
-                className={`flex-1 p-3 rounded-lg border transition-all ${isEditing
-                  ? "border-indigo-400 bg-white"
-                  : "border-gray-200 bg-gray-50"
-                  } outline-none`}
-              />
-            </div>
+            <input
+              type="text"
+              name="phoneNumber"
+              disabled={!isEditing}
+              value={userData.phoneNumber}
+              onChange={handleChange}
+              className={`w-full p-3 rounded-lg border transition-all ${isEditing
+                ? "border-indigo-400 bg-white"
+                : "border-gray-200 bg-gray-50"
+                } outline-none`}
+            />
           </div>
         </div>
       </div>
