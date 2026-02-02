@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Bell, Menu, UserCircle, Key, LogOut, ChevronDown } from "lucide-react";
 import { Link } from "react-router";
+import images from "../assets/images";
 
 const TopNavbar = ({ onMenuClick, userName = "Md. Sabbir Hossain Evan" }) => {
   const [showNotifications, setShowNotifications] = useState(false);
@@ -80,11 +81,10 @@ const TopNavbar = ({ onMenuClick, userName = "Md. Sabbir Hossain Evan" }) => {
               setShowNotifications(!showNotifications);
               setShowProfileMenu(false);
             }}
-            className={`relative p-2 rounded-full transition-all ${
-              showNotifications
-                ? "bg-purple-200"
-                : "text-[#6200EE] hover:bg-purple-50"
-            }`}
+            className={`relative p-2 rounded-full transition-all ${showNotifications
+              ? "bg-purple-200"
+              : "text-[#6200EE] hover:bg-purple-50"
+              }`}
           >
             <Bell
               size={24}
@@ -110,14 +110,12 @@ const TopNavbar = ({ onMenuClick, userName = "Md. Sabbir Hossain Evan" }) => {
                 {notifications.map((notif) => (
                   <div
                     key={notif.id}
-                    className={`p-4 border-b border-gray-50 flex gap-3 hover:bg-purple-50 cursor-pointer ${
-                      !notif.read ? "bg-purple-50/50" : "opacity-70"
-                    }`}
+                    className={`p-4 border-b border-gray-50 flex gap-3 hover:bg-purple-50 cursor-pointer ${!notif.read ? "bg-purple-50/50" : "opacity-70"
+                      }`}
                   >
                     <div
-                      className={`mt-1 w-2 h-2 rounded-full flex-shrink-0 ${
-                        !notif.read ? "bg-[#6200EE]" : "bg-transparent"
-                      }`}
+                      className={`mt-1 w-2 h-2 rounded-full flex-shrink-0 ${!notif.read ? "bg-[#6200EE]" : "bg-transparent"
+                        }`}
                     ></div>
                     <div className="flex-1 text-sm font-medium text-gray-700">
                       {notif.text}
@@ -146,16 +144,15 @@ const TopNavbar = ({ onMenuClick, userName = "Md. Sabbir Hossain Evan" }) => {
           >
             <div className="w-10 h-10 rounded-full border-2 border-[#6200EE] overflow-hidden shadow-sm group-hover:scale-105 transition-transform">
               <img
-                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop"
+                src={images.avatar}
                 alt="User"
                 className="w-full h-full object-cover"
               />
             </div>
             <ChevronDown
               size={20}
-              className={`text-[#6200EE] transition-transform duration-300 ${
-                showProfileMenu ? "rotate-180" : ""
-              }`}
+              className={`text-[#6200EE] transition-transform duration-300 ${showProfileMenu ? "rotate-180" : ""
+                }`}
             />
           </div>
 

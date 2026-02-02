@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Users, UserCheck, AlertCircle } from "lucide-react";
+import api from "../services/api";
 
 const StatCard = ({ title, value, percentage, icon: Icon }) => {
   return (
@@ -25,18 +26,27 @@ const StatCard = ({ title, value, percentage, icon: Icon }) => {
 };
 
 const DashboardOverview = () => {
+  const [dashboardData, setDashboardData] = useState([]);
+  // DASHBOARD OVERVIEW 
+  useEffect(() => {
+    const dashboardData = async () => {
+      const response = await api.get("/admin/dashboard/overview");
+      setDashboardData(response.data);
+    }
+    dashboardData();
+  }, []);
   const stats = [
-    { title: "All Users", value: "560", percentage: "3.44", icon: Users },
+    { title: "All Users", value: dashboardData.allUsers, percentage: dashboardData.allUsersPercentage || 0, icon: Users },
     {
       title: "Total Providers",
-      value: "150",
-      percentage: "3.44",
+      value: dashboardData.totalProviders,
+      percentage: dashboardData.totalProvidersPercentage || 0,
       icon: UserCheck,
     },
     {
-      title: "Reported Users",
-      value: "150",
-      percentage: "3.44",
+      title: "Reported Customer",
+      value: dashboardData.totalCustomers,
+      percentage: dashboardData.totalCustomersPercentage || 0,
       icon: AlertCircle,
     },
   ];
