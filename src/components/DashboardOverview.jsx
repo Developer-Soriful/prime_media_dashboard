@@ -26,14 +26,34 @@ const StatCard = ({ title, value, percentage, icon: Icon }) => {
 };
 
 const DashboardOverview = () => {
-  const [dashboardData, setDashboardData] = useState([]);
+  const [dashboardData, setDashboardData] = useState({
+    allUsers: 0,
+    allUsersPercentage: 0,
+    totalProviders: 0,
+    totalProvidersPercentage: 0,
+    totalCustomers: 0,
+    totalCustomersPercentage: 0,
+  });
+
   // DASHBOARD OVERVIEW 
   useEffect(() => {
-    const dashboardData = async () => {
-      const response = await api.get("/admin/dashboard/overview");
-      setDashboardData(response.data);
-    }
-    dashboardData();
+    const fetchDashboardData = async () => {
+      try {
+        const response = await api.get("/admin/dashboard/overview");
+        console.log("Dashboard data:", response.data);
+
+        // Handle response structure
+        if (response.data?.success && response.data?.data) {
+          setDashboardData(response.data.data);
+        } else if (response.data && !response.data.success) {
+          // Response is directly the data object
+          setDashboardData(response.data);
+        }
+      } catch (error) {
+        console.error("Failed to fetch dashboard data:", error);
+      }
+    };
+    fetchDashboardData();
   }, []);
   const stats = [
     { title: "All Users", value: dashboardData.allUsers, percentage: dashboardData.allUsersPercentage || 0, icon: Users },

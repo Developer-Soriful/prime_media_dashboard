@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   AreaChart,
   Area,
@@ -9,26 +9,39 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { ChevronDown } from "lucide-react";
-
-const data = [
-  { name: "Jan", value: 38 },
-  { name: "Feb", value: 94 },
-  { name: "Mar", value: 52 },
-  { name: "Apr", value: 88 },
-  { name: "May", value: 65 },
-  { name: "Jun", value: 68 },
-  { name: "July", value: 88 },
-  { name: "Aug", value: 28 },
-  { name: "Sep", value: 68 },
-  { name: "Oct", value: 42 },
-  { name: "Nov", value: 98 },
-  { name: "Dec", value: 92 },
-];
+import api from "../services/api";
 
 const UserOverviewChart = () => {
+  const [data, setData] = useState([]);
+  // CHART DATA LOADING 
+  useEffect(() => {
+    const chartData = async () => {
+      try {
+        const response = await api.get("/admin/dashboard/user-overview");
+        console.log("Chart data response:", response.data);
+        if (Array.isArray(response.data)) {
+          setData(response.data);
+        } else if (response.data?.data && Array.isArray(response.data.data)) {
+          setData(response.data.data);
+        } else if (typeof response.data === 'object' && response.data !== null) {
+          const transformedData = Object.keys(response.data).map(key => ({
+            name: key,
+            value: response.data[key]
+          }));
+          setData(transformedData);
+        } else {
+          console.error("Invalid chart data format:", response.data);
+          setData([]);
+        }
+      } catch (error) {
+        console.error("Failed to fetch chart data:", error);
+        setData([]);
+      }
+    };
+    chartData();
+  }, []);
   return (
     <div className="w-full bg-[#EFE6FD1A] p-6  rounded-2xl border border-[#6200EE] ">
-      {/* Chart Container */}
       <div className="h-[300px] w-full mt-10">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
@@ -36,14 +49,11 @@ const UserOverviewChart = () => {
             margin={{ top: 0, right: 10, left: -20, bottom: 0 }}
           >
             <defs>
-              {/* This creates the purple gradient fill seen in your image */}
               <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="5%" stopColor="#6200EE" stopOpacity={0.3} />
                 <stop offset="95%" stopColor="#6200EE" stopOpacity={0.01} />
               </linearGradient>
             </defs>
-
-            {/* Dotted Grid Lines */}
             <CartesianGrid
               strokeDasharray="3 3"
               vertical={true}
