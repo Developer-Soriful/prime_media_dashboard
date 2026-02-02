@@ -42,6 +42,21 @@ const ProtectedRoute = ({ children }) => {
         );
     }
 
+    // Check for Admin Role
+    if (user.role !== 'ADMIN') {
+        return (
+            <StatusModal
+                isOpen={true}
+                onClose={handleLoginRedirect}
+                title="Access Denied"
+                message="You do not have permission to access this page. Admin privileges required."
+                type="error"
+                actionLabel="Go Back"
+                onAction={handleLoginRedirect}
+            />
+        );
+    }
+
     return <>{children}</>;
 };
 

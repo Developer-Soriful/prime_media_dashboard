@@ -34,11 +34,27 @@ export const AuthProvider = ({ children }) => {
     const login = async (email, password) => {
         try {
             const res = await api.post("/auth/login", { email, password });
-            if (res.token) {
+            console.log("Login API Response:", res); // DEBUG LOG
+
+            if (res.success && res.data) {
+                const token = res.data.session?.accessToken || res.data.token || res.data.session?.token;
+
+                if (token) {
+                    localStorage.setItem("authToken", token);
+                    // After login, fetch the user details immediately
+                    const userRes = await api.get("/users/me");
+                    console.log("User Details Response:", userRes); // DEBUG LOG
+                    setUser(userRes.data?.user || userRes.data || userRes);
+                } else {
+                    console.warn("Token validation failed. Structure:", res);
+                }
+            } else if (res.token) {
+                // Fallback for flat structure
                 localStorage.setItem("authToken", res.token);
-                // After login, fetch the user details immediately
                 const userRes = await api.get("/users/me");
                 setUser(userRes.data);
+            } else {
+                console.warn("Unknown response structure:", res);
             }
         } catch (error) {
             console.error("Login failed:", error);

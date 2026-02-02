@@ -3,9 +3,11 @@ import { Link, useNavigate } from "react-router";
 import api from "../services/api";
 import StatusModal from "../components/modal/StatusModal";
 import { useState } from "react";
+import { useAuth } from "../context/AuthProvider";
 
 const LoginSection = () => {
   const navigate = useNavigate();
+  const { login } = useAuth(); // Destructured login from useAuth
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [modal, setModal] = useState({
     isOpen: false,
@@ -28,11 +30,7 @@ const LoginSection = () => {
     const password = formData.get("password");
 
     try {
-      const response = await api.post("/auth/login", { email, password });
-
-      if (response.token) {
-        localStorage.setItem("authToken", response.token);
-      }
+      await login(email, password);
 
       setModal({
         isOpen: true,
