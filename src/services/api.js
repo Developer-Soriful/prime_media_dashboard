@@ -23,7 +23,6 @@ api.interceptors.request.use((config) => {
 // Response interceptor - DO NOT return response.data here!
 api.interceptors.response.use(
     (response) => {
-        // Keep full response so we can access status, headers if needed
         return response;
     },
     (error) => {

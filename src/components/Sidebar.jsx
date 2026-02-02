@@ -56,7 +56,7 @@
 //         lg:translate-x-0 lg:static lg:mx-10 lg:my-10 
 //         ${isOpen ? 'translate-x-5 my-10 mx-5' : '-translate-x-full'}
 //       `}>
-        
+
 //         <button 
 //           className="lg:hidden absolute top-4 right-4 text-purple-600"
 //           onClick={() => setIsOpen(false)}
@@ -98,7 +98,7 @@
 
 //         {/* --- Profile & Sign Out Section --- */}
 //         <div className="mt-auto pt-4 space-y-2 border-t border-[#d8c5f7]">
-          
+
 //           <Link to={"/dashboard/profile"} className="block">
 //             <div className="flex items-center p-2 gap-3 bg-white/40 rounded-2xl border border-transparent hover:border-[#6200EE] transition-all cursor-pointer group">
 //               <div className="w-10 h-10 rounded-full border-2 border-[#6200EE] overflow-hidden">
@@ -130,9 +130,9 @@
 
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { X, ShieldCheck, Settings, LogOut, AlertCircle } from 'lucide-react'; 
+import { X, ShieldCheck, Settings, LogOut, AlertCircle } from 'lucide-react';
 import loginIcon from '../assets/sidebarLogo.svg';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 
 const Sidebar = ({ onLogout, isOpen, setIsOpen }) => {
   const navigate = useNavigate();
@@ -142,7 +142,7 @@ const Sidebar = ({ onLogout, isOpen, setIsOpen }) => {
   const userData = {
     name: "Evan",
     role: "Admin",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop" 
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop"
   };
 
   const menuItems = [
@@ -158,7 +158,7 @@ const Sidebar = ({ onLogout, isOpen, setIsOpen }) => {
     setIsLogoutModalOpen(false);
     if (onLogout) {
       onLogout();
-      navigate('/');
+      navigate('/login');
     }
   };
 
@@ -174,7 +174,7 @@ const Sidebar = ({ onLogout, isOpen, setIsOpen }) => {
         lg:translate-x-0 lg:static lg:mx-10 lg:my-10 
         ${isOpen ? 'translate-x-5 my-10 mx-5' : '-translate-x-full'}
       `}>
-        
+
         <button className="lg:hidden absolute top-4 right-4 text-purple-600" onClick={() => setIsOpen(false)}>
           <X size={24} />
         </button>
@@ -192,8 +192,8 @@ const Sidebar = ({ onLogout, isOpen, setIsOpen }) => {
               onClick={() => setIsOpen(false)}
               className={({ isActive }) => `
                 w-full flex items-center p-3 rounded-2xl transition-all duration-300 font-bold
-                ${isActive 
-                  ? 'bg-[#EFE6FD] text-[#6200EE] border-2 border-[#6200EE] shadow-[0px_4px_0px_0px_rgba(98,0,238,1)]' 
+                ${isActive
+                  ? 'bg-[#EFE6FD] text-[#6200EE] border-2 border-[#6200EE] shadow-[0px_4px_0px_0px_rgba(98,0,238,1)]'
                   : 'text-[#6200EE] hover:bg-white/50 border-2 border-transparent'}
               `}
             >
@@ -202,7 +202,7 @@ const Sidebar = ({ onLogout, isOpen, setIsOpen }) => {
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={item.iconPath} />
                   </svg>
-                ) : ( item.icon )}
+                ) : (item.icon)}
               </div>
               <span className="truncate">{item.name}</span>
             </NavLink>
@@ -223,7 +223,7 @@ const Sidebar = ({ onLogout, isOpen, setIsOpen }) => {
           </Link>
 
           {/* Sign Out বাটনে ক্লিক করলে মডাল ওপেন হবে */}
-          <button 
+          <button
             onClick={() => setIsLogoutModalOpen(true)}
             className="w-full flex items-center mt-2 p-3 text-[#6200EE] font-bold hover:text-red-500 hover:bg-red-50 rounded-2xl transition-all group"
           >
@@ -243,15 +243,15 @@ const Sidebar = ({ onLogout, isOpen, setIsOpen }) => {
               </div>
               <h3 className="text-xl font-bold text-gray-800 mb-2">Do you want to exit?</h3>
               <p className="text-gray-500 text-sm mb-8">Confirming will log you out from your current session.</p>
-              
+
               <div className="flex gap-3 w-full">
-                <button 
+                <button
                   onClick={() => setIsLogoutModalOpen(false)}
                   className="flex-1 py-3 px-6 bg-gray-100 text-gray-600 font-bold rounded-2xl hover:bg-gray-200 transition-all"
                 >
                   No
                 </button>
-                <button 
+                <button
                   onClick={confirmLogout}
                   className="flex-1 py-3 px-6 bg-red-500 text-white font-bold rounded-2xl shadow-lg shadow-red-200 hover:bg-red-600 active:translate-y-1 transition-all"
                 >

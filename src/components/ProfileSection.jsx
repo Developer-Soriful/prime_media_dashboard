@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Edit3, X } from "lucide-react";
 import { Link } from "react-router";
 import { ButtonLoader } from "./common/Loader";
@@ -10,8 +10,15 @@ import StatusModal from "./modal/StatusModal";
 const ProfileSection = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
-  //  USER DATA
   const { user, updateUser } = useAuth();
+
+  const [userData, setUserData] = useState({
+    name: user?.name || "",
+    email: user?.email || "",
+    phone: user?.phone || "",
+    role: user?.role || "",
+  });
+
   const [modal, setModal] = useState({
     isOpen: false,
     type: "info",
@@ -21,17 +28,29 @@ const ProfileSection = () => {
     onAction: null,
   });
 
+  useEffect(() => {
+    if (user) {
+      setUserData({
+        name: user.name || "",
+        email: user.email || "",
+        phone: user.phone || "",
+        role: user.role || "",
+      });
+    }
+  }, [user]);
+
   const closeModal = () => {
     setModal((prev) => ({ ...prev, isOpen: false }));
   };
 
   const handleSave = async () => {
     setIsSaving(true);
+
     try {
       const response = await api.put("/users/me/profile", userData);
-
+      console.log("Profile Update Response:", response);
       if (response.success) {
-        updateUser(response.data); // Update local context
+        updateUser(response.data);
         setModal({
           isOpen: true,
           type: "success",
@@ -64,12 +83,6 @@ const ProfileSection = () => {
     }
   };
 
-  const [userData, setUserData] = useState({
-    name: user?.name,
-    email: user?.email,
-    phone: user?.phone,
-    role: user?.role,
-  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;

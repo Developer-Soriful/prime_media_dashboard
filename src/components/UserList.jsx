@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Megaphone,
   MessageSquare,
@@ -8,6 +8,8 @@ import {
 import GlobalAnnouncementModal from "./modal/GlobalAnnouncementModal";
 import SingleUserModal from "./modal/SingleUserModal";
 import { ChevronDown } from "lucide-react";
+import api from "../services/api";
+import { PageLoader } from "./common/Loader";
 
 const UserList = () => {
   const [filter, setFilter] = useState("All User");
@@ -16,37 +18,56 @@ const UserList = () => {
   const [isUserModalOpen, setUserModalOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
 
-  const allUsers = useMemo(
-    () =>
-      Array.from({ length: 120 }, (_, i) => ({
-        id: (i + 1).toString().padStart(2, "0"),
-        name: i % 2 === 0 ? "Christopher Brown" : "Charles Cook",
-        email: `user${i}@gmail.com`,
-        phone: "+7 (903) 941-02-27",
-        date: "15 May 2020 9:00 Am",
-
-        role:
-          i % 4 === 0
-            ? "Only Users"
-            : i % 4 === 1
-            ? "Providers"
-            : i % 4 === 2
-            ? "Reported"
-            : "Blocked",
-      })),
-    []
-  );
-
-  const filteredData = useMemo(() => {
-    if (filter === "All User") return allUsers;
-    return allUsers.filter((user) => user.role === filter);
-  }, [filter, allUsers]);
+  // API state
+  const [users, setUsers] = useState([]);
+  const [pagination, setPagination] = useState({ page: 1, limit: 10, total: 0 });
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const usersPerPage = 10;
-  const totalPages = Math.ceil(filteredData.length / usersPerPage);
-  const indexOfLastUser = currentPage * usersPerPage;
-  const indexOfFirstUser = indexOfLastUser - usersPerPage;
-  const currentUsers = filteredData.slice(indexOfFirstUser, indexOfLastUser);
+
+  // Fetch users from API
+  useEffect(() => {
+    const fetchUsers = async () => {
+      setIsLoading(true);
+      setError(null);
+      try {
+        const params = new URLSearchParams({
+          page: currentPage,
+          limit: usersPerPage,
+        });
+
+        // Construct URL based on filter
+        let endpoint = "/admin/users";
+
+        if (filter === "Only Users") {
+          endpoint = "/admin/users/customers";
+        } else if (filter === "Providers") {
+          endpoint = "/admin/users/providers";
+        } else if (filter === "Reported") {
+          endpoint = "/admin/users/reported";
+        } else if (filter === "Blocked") {
+          endpoint = "/admin/users/blocked";
+        }
+
+        const response = await api.get(`${endpoint}?${params.toString()}`);
+        console.log(response.data);
+        if (response.data) {
+          setUsers(response.data.data || []);
+          setPagination(response.data.data.pagination || { page: 1, limit: 10, total: 0 });
+        }
+      } catch (err) {
+        console.error("Failed to fetch users:", err);
+        setError("Failed to load users. Please try again.");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchUsers();
+  }, [currentPage, filter]);
+
+  const totalPages = Math.ceil(pagination.total / usersPerPage);
 
   const handleFilterChange = (e) => {
     setFilter(e.target.value);
@@ -84,6 +105,9 @@ const UserList = () => {
         </button>
       </div>
 
+
+      {isLoading && <PageLoader />}
+
       <div className="overflow-hidden rounded-2xl border border-[#6200EE]">
         <table className="w-full text-left">
           <thead className="bg-[#6200EE] text-white font-bold">
@@ -97,29 +121,37 @@ const UserList = () => {
             </tr>
           </thead>
           <tbody className="divide-y divide-[#6200EE]">
-            {currentUsers.length > 0 ? (
-              currentUsers.map((user) => (
+            {error ? (
+              <tr>
+                <td colSpan="6" className="text-center py-10 text-red-500">
+                  {error}
+                </td>
+              </tr>
+            ) : users.length > 0 ? (
+              users.map((user, index) => (
                 <tr
                   key={user.id}
                   className="hover:bg-purple-50 transition-colors"
                 >
-                  <td className="px-6 py-4 text-sm text-gray-600">{user.id}</td>
+                  <td className="px-6 py-4 text-sm text-gray-600">
+                    {(pagination.page - 1) * pagination.limit + index + 1}
+                  </td>
                   <td className="px-6 py-4 flex items-center gap-3 text-sm font-medium">
                     <img
                       className="w-8 h-8 rounded-full"
                       src={`https://i.pravatar.cc/150?u=${user.id}`}
                       alt="avatar"
                     />
-                    {user.name}
+                    {user.userName || "N/A"}
                   </td>
                   <td className="px-6 py-4 text-sm text-gray-600">
                     {user.email}
                   </td>
                   <td className="px-6 py-4 text-sm text-gray-600">
-                    {user.phone}
+                    {user.phoneNumber || "N/A"}
                   </td>
                   <td className="px-6 py-4 text-sm text-gray-600">
-                    {user.date}
+                    {new Date(user.dateTime).toLocaleString()}
                   </td>
                   <td className="px-6 py-4 text-center">
                     <button
@@ -137,7 +169,7 @@ const UserList = () => {
             ) : (
               <tr>
                 <td colSpan="6" className="text-center py-10 text-gray-400">
-                  No data found for this filter.
+                  No users found for this filter.
                 </td>
               </tr>
             )}
@@ -147,9 +179,9 @@ const UserList = () => {
 
       <div className="flex justify-between items-center mt-6">
         <p className="text-gray-500 font-bold text-xs uppercase">
-          Showing {indexOfFirstUser + 1}-
-          {Math.min(indexOfLastUser, filteredData.length)} of{" "}
-          {filteredData.length}
+          Showing {(pagination.page - 1) * pagination.limit + 1}-
+          {Math.min(pagination.page * pagination.limit, pagination.total)} of{" "}
+          {pagination.total}
         </p>
         <div className="flex items-center gap-2">
           <button
@@ -164,11 +196,10 @@ const UserList = () => {
             <button
               key={i}
               onClick={() => setCurrentPage(i + 1)}
-              className={`px-3 py-1 rounded font-bold ${
-                currentPage === i + 1
-                  ? "bg-[#6200EE] text-white"
-                  : "text-gray-400 hover:bg-purple-100"
-              }`}
+              className={`px-3 py-1 rounded font-bold ${currentPage === i + 1
+                ? "bg-[#6200EE] text-white"
+                : "text-gray-400 hover:bg-purple-100"
+                }`}
             >
               {i + 1}
             </button>
