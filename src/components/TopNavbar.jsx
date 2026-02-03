@@ -1,42 +1,83 @@
-
-
 import React, { useState, useRef, useEffect } from "react";
-import { Bell, Menu, UserCircle, Key, LogOut, ChevronDown } from "lucide-react";
+import { Bell, Menu, UserCircle, Key, LogOut, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router";
 import images from "../assets/images";
+import NotificationDetailModal from "./modal/NotificationDetailModal";
+import api from "../services/api";
 
 const TopNavbar = ({ onMenuClick, userName = "Md. Sabbir Hossain Evan" }) => {
   const [showNotifications, setShowNotifications] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
+  const [selectedNotification, setSelectedNotification] = useState(null);
+  const [notifications, setNotifications] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [isLoadingNotifications, setIsLoadingNotifications] = useState(false);
 
   const notificationRef = useRef(null);
   const profileRef = useRef(null);
+  const NOTIFICATIONS_PER_PAGE = 10;
 
-  // Mock Notification State
-  const [notifications, setNotifications] = useState([
-    {
-      id: 1,
-      text: "New service 'Spa' added successfully",
-      time: "2 mins ago",
-      read: false,
-    },
-    {
-      id: 2,
-      text: "Promotion 'Summer Sale' is now active",
-      time: "1 hour ago",
-      read: false,
-    },
-    {
-      id: 3,
-      text: "System update scheduled for tonight",
-      time: "5 hours ago",
-      read: true,
-    },
-  ]);
+  // Fetch notifications from API
+  useEffect(() => {
+    fetchNotifications(currentPage);
+  }, [currentPage]);
+
+  const fetchNotifications = async (page) => {
+    setIsLoadingNotifications(true);
+    try {
+      const response = await api.get(`/provider/notifications?page=${page}&limit=${NOTIFICATIONS_PER_PAGE}`);
+      const apiData = response.data.data || [];
+      const pagination = response.data.pagination || {};
+
+      setNotifications(apiData);
+      setTotalPages(Math.ceil(pagination.total / NOTIFICATIONS_PER_PAGE));
+    } catch (error) {
+      console.error('Failed to fetch notifications:', error);
+      setNotifications([]);
+    } finally {
+      setIsLoadingNotifications(false);
+    }
+  };
+
+  // Format timestamp to relative time
+  const formatTime = (timestamp) => {
+    const now = new Date();
+    const past = new Date(timestamp);
+    const diffMs = now - past;
+    const diffMins = Math.floor(diffMs / 60000);
+    const diffHours = Math.floor(diffMins / 60);
+    const diffDays = Math.floor(diffHours / 24);
+
+    if (diffMins < 1) return 'Just now';
+    if (diffMins < 60) return `${diffMins} min${diffMins > 1 ? 's' : ''} ago`;
+    if (diffHours < 24) return `${diffHours} hour${diffHours > 1 ? 's' : ''} ago`;
+    if (diffDays < 7) return `${diffDays} day${diffDays > 1 ? 's' : ''} ago`;
+    return past.toLocaleDateString();
+  };
 
   const handleMarkAllAsRead = () => {
-    setNotifications((prev) => prev.map((n) => ({ ...n, read: true })));
+    setNotifications((prev) => prev.map((n) => ({ ...n, isRead: true })));
     setShowNotifications(false);
+  };
+
+  const handleMarkAsRead = (notificationId) => {
+    setNotifications((prev) =>
+      prev.map((n) => (n.id === notificationId ? { ...n, isRead: true } : n))
+    );
+  };
+
+  const handleNotificationClick = (notification) => {
+    setSelectedNotification(notification);
+    setShowNotifications(false);
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) setCurrentPage(currentPage - 1);
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
   };
 
   // Close menus when clicking outside
@@ -56,7 +97,7 @@ const TopNavbar = ({ onMenuClick, userName = "Md. Sabbir Hossain Evan" }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const unreadCount = notifications.filter((n) => !n.read).length;
+  const unreadCount = notifications.filter((n) => !n.isRead).length;
 
   return (
     <div className="h-16 md:mt-10 md:mr-10 mb-6 bg-[#EFE6FD] border border-[#6200EE] rounded-xl flex items-center justify-between px-6 sticky top-0 z-30 font-nunito shadow-sm">
@@ -72,7 +113,6 @@ const TopNavbar = ({ onMenuClick, userName = "Md. Sabbir Hossain Evan" }) => {
           Welcome, {userName}
         </h2>
       </div>
-
       <div className="flex items-center gap-4">
         {/* Notification Section */}
         <div className="relative" ref={notificationRef}>
@@ -107,24 +147,66 @@ const TopNavbar = ({ onMenuClick, userName = "Md. Sabbir Hossain Evan" }) => {
                 )}
               </div>
               <div className="max-h-80 overflow-y-auto">
-                {notifications.map((notif) => (
-                  <div
-                    key={notif.id}
-                    className={`p-4 border-b border-gray-50 flex gap-3 hover:bg-purple-50 cursor-pointer ${!notif.read ? "bg-purple-50/50" : "opacity-70"
-                      }`}
-                  >
-                    <div
-                      className={`mt-1 w-2 h-2 rounded-full flex-shrink-0 ${!notif.read ? "bg-[#6200EE]" : "bg-transparent"
-                        }`}
-                    ></div>
-                    <div className="flex-1 text-sm font-medium text-gray-700">
-                      {notif.text}
-                    </div>
+                {isLoadingNotifications ? (
+                  <div className="p-8 flex justify-center items-center">
+                    <div className="w-8 h-8 border-4 border-purple-200 border-t-[#6200EE] rounded-full animate-spin"></div>
                   </div>
-                ))}
+                ) : notifications.length === 0 ? (
+                  <div className="p-8 text-center text-gray-500">
+                    <Bell size={32} className="mx-auto mb-2 text-gray-300" />
+                    <p>No notifications</p>
+                  </div>
+                ) : (
+                  notifications.map((notif) => (
+                    <div
+                      key={notif.id}
+                      onClick={() => handleNotificationClick(notif)}
+                      className={`p-4 border-b border-gray-50 flex gap-3 hover:bg-purple-100 cursor-pointer transition-colors ${!notif.isRead ? "bg-purple-50/50" : "opacity-70"
+                        }`}
+                    >
+                      <div
+                        className={`mt-1 w-2 h-2 rounded-full flex-shrink-0 ${!notif.isRead ? "bg-[#6200EE]" : "bg-transparent"
+                          }`}
+                      ></div>
+                      <div className="flex-1">
+                        <div className="text-sm font-semibold text-gray-800">
+                          {notif.title}
+                        </div>
+                        <div className="text-xs text-gray-500 mt-0.5 line-clamp-2">
+                          {notif.message}
+                        </div>
+                        <div className="text-xs text-gray-400 mt-1">
+                          {formatTime(notif.createdAt)}
+                        </div>
+                      </div>
+                    </div>
+                  ))
+                )}
               </div>
+              {/* Pagination Controls */}
+              {!isLoadingNotifications && notifications.length > 0 && totalPages > 1 && (
+                <div className="p-3 border-t border-gray-100 flex items-center justify-between">
+                  <button
+                    onClick={handlePreviousPage}
+                    disabled={currentPage === 1}
+                    className="p-2 rounded-lg hover:bg-purple-50 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                  >
+                    <ChevronLeft size={18} className="text-[#6200EE]" />
+                  </button>
+                  <span className="text-xs font-medium text-gray-600">
+                    Page {currentPage} of {totalPages}
+                  </span>
+                  <button
+                    onClick={handleNextPage}
+                    disabled={currentPage === totalPages}
+                    className="p-2 rounded-lg hover:bg-purple-50 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                  >
+                    <ChevronRight size={18} className="text-[#6200EE]" />
+                  </button>
+                </div>
+              )}
               <button
-                className="w-full p-3 text-xs font-bold text-white bg-[#6200EE]"
+                className="w-full p-3 text-xs font-bold text-white bg-[#6200EE] hover:bg-[#7722FF] transition-colors"
                 onClick={handleMarkAllAsRead}
               >
                 Clear & Close
@@ -189,6 +271,14 @@ const TopNavbar = ({ onMenuClick, userName = "Md. Sabbir Hossain Evan" }) => {
           )}
         </div>
       </div>
+
+      {/* Notification Detail Modal */}
+      <NotificationDetailModal
+        isOpen={selectedNotification !== null}
+        onClose={() => setSelectedNotification(null)}
+        notification={selectedNotification}
+        onMarkAsRead={handleMarkAsRead}
+      />
     </div>
   );
 };
