@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Users, UserCheck, AlertCircle } from "lucide-react";
-import api from "../services/api";
+import adminService from '../services/adminService';
 
 const StatCard = ({ title, value, percentage, icon: Icon }) => {
   return (
@@ -39,14 +39,12 @@ const DashboardOverview = () => {
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const response = await api.get("/admin/dashboard/overview");
+        const response = await adminService.getDashboardOverview();
         console.log("Dashboard data:", response.data);
 
-        // Handle response structure
-        if (response.data?.success && response.data?.data) {
-          setDashboardData(response.data.data);
-        } else if (response.data && !response.data.success) {
-          // Response is directly the data object
+        if (response && response.success) {
+          setDashboardData(response.data);
+        } else if (response && response.data) {
           setDashboardData(response.data);
         }
       } catch (error) {

@@ -3,7 +3,7 @@ import { Edit3, X } from "lucide-react";
 import { Link } from "react-router";
 import { ButtonLoader, PageLoader } from "./common/Loader";
 import images from "../assets/images";
-import api from "../services/api";
+import adminService from "../services/adminService";
 import StatusModal from "./modal/StatusModal";
 
 const ProfileSection = () => {
@@ -34,7 +34,7 @@ const ProfileSection = () => {
     const fetchProfile = async () => {
       setIsLoading(true);
       try {
-        const response = await api.get("/admin/profile");
+        const response = await adminService.getProfile();
         console.log("Profile Data:", response.data);
 
         // response.data is directly the user object
@@ -66,9 +66,10 @@ const ProfileSection = () => {
     setIsSaving(true);
 
     try {
-      const response = await api.put("/admin/profile", {
+      const response = await adminService.updateProfile({
         fullName: userData.fullName,
         phoneNumber: userData.phoneNumber,
+        // profilePicture: userData.profilePicture // Add if supported
       });
 
       console.log("Profile Update Response:", response);
@@ -129,7 +130,7 @@ const ProfileSection = () => {
   return (
     <div className=" mx-auto p-2 mr-10 ">
       <div className="flex justify-between items-center mb-8">
-        <Link to={"/dashboard"}>
+        <Link to={"/"}>
           <h2 className="text-xl font-semibold text-indigo-700 flex items-center gap-2">
             <span className="cursor-pointer">←</span> Personal Information
           </h2>

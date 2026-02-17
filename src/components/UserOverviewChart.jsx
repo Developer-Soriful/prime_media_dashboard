@@ -9,7 +9,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { ChevronDown } from "lucide-react";
-import api from "../services/api";
+import adminService from '../services/adminService';
 
 const UserOverviewChart = () => {
   const [data, setData] = useState([]);
@@ -17,14 +17,15 @@ const UserOverviewChart = () => {
   useEffect(() => {
     const chartData = async () => {
       try {
-        const response = await api.get("/admin/dashboard/user-overview");
-        console.log("Chart data response:", response.data);
-        if (Array.isArray(response.data)) {
-          setData(response.data);
-        } else if (response.data?.data && Array.isArray(response.data.data)) {
-          setData(response.data.data);
-        } else if (typeof response.data === 'object' && response.data !== null) {
-          const transformedData = Object.keys(response.data).map(key => ({
+        const response = await adminService.getUserOverview();
+
+        let apiData = response.data || response; // adminService returns res.data, but handle potential structure
+        if (apiData.data) apiData = apiData.data;
+
+        if (Array.isArray(apiData)) {
+          setData(apiData);
+        } else if (typeof apiData === 'object' && apiData !== null) {
+          const transformedData = Object.keys(apiData).map(key => ({
             name: key,
             value: response.data[key]
           }));

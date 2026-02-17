@@ -72,7 +72,7 @@ const ResetPassword = () => {
           </div>
 
           {/* Reset Password Button */}
-          <Link to={"/dashboard"}>
+          <Link to={"/"}>
             <button
               type="submit"
               className="w-full py-4 mt-4 bg-gradient-to-r from-[#6200EE] to-purple-500 text-white font-semibold rounded-2xl hover:opacity-90 transition-opacity shadow-lg text-lg"

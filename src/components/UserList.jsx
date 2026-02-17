@@ -8,7 +8,7 @@ import {
 import GlobalAnnouncementModal from "./modal/GlobalAnnouncementModal";
 import SingleUserModal from "./modal/SingleUserModal";
 import { ChevronDown } from "lucide-react";
-import api from "../services/api";
+import adminService from "../services/adminService";
 import { PageLoader } from "./common/Loader";
 
 const UserList = () => {
@@ -27,43 +27,43 @@ const UserList = () => {
   const usersPerPage = 10;
 
   // Fetch users from API
-  useEffect(() => {
-    const fetchUsers = async () => {
-      setIsLoading(true);
-      setError(null);
-      try {
-        const params = new URLSearchParams({
-          page: currentPage,
-          limit: usersPerPage,
-        });
+  // Fetch users from API
+  const fetchUsers = async () => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const params = {
+        page: currentPage,
+        limit: usersPerPage,
+      };
 
-        // Construct URL based on filter
-        let endpoint = "/admin/users";
-
-        if (filter === "Only Users") {
-          endpoint = "/admin/users/customers";
-        } else if (filter === "Providers") {
-          endpoint = "/admin/users/providers";
-        } else if (filter === "Reported") {
-          endpoint = "/admin/users/reported";
-        } else if (filter === "Blocked") {
-          endpoint = "/admin/users/blocked";
-        }
-
-        const response = await api.get(`${endpoint}?${params.toString()}`);
-        console.log(response.data);
-        if (response.data) {
-          setUsers(response.data.data || []);
-          setPagination(response.data.data.pagination || { page: 1, limit: 10, total: 0 });
-        }
-      } catch (err) {
-        console.error("Failed to fetch users:", err);
-        setError("Failed to load users. Please try again.");
-      } finally {
-        setIsLoading(false);
+      let response;
+      if (filter === "Only Users") {
+        response = await adminService.getCustomers(params);
+      } else if (filter === "Providers") {
+        response = await adminService.getProviders(params);
+      } else if (filter === "Reported") {
+        response = await adminService.getReportedUsers(params);
+      } else if (filter === "Blocked") {
+        response = await adminService.getBlockedUsers(params);
+      } else {
+        response = await adminService.getAllUsers(params);
       }
-    };
 
+      console.log(response.data);
+      if (response.data) {
+        setUsers(response.data.data || []);
+        setPagination(response.data.data.pagination || { page: 1, limit: 10, total: 0 });
+      }
+    } catch (err) {
+      console.error("Failed to fetch users:", err);
+      setError("Failed to load users. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
     fetchUsers();
   }, [currentPage, filter]);
 
@@ -223,6 +223,7 @@ const UserList = () => {
         <SingleUserModal
           user={selectedUser}
           onClose={() => setUserModalOpen(false)}
+          onUpdate={fetchUsers}
         />
       )}
     </div>

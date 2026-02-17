@@ -1,13 +1,13 @@
-
 import { useState } from 'react';
 import { X, Send } from 'lucide-react';
-import api from '../../services/api';
+import adminService from '../../services/adminService';
 import StatusModal from './StatusModal';
 
-const SingleUserModal = ({ user, onClose }) => {
+const SingleUserModal = ({ user, onClose, onUpdate }) => {
   const [message, setMessage] = useState('');
   const [title, setTitle] = useState('');
   const [isSending, setIsSending] = useState(false);
+  const [isBlocking, setIsBlocking] = useState(false);
   const [modal, setModal] = useState({
     isOpen: false,
     type: 'info',
@@ -40,8 +40,7 @@ const SingleUserModal = ({ user, onClose }) => {
 
     setIsSending(true);
     try {
-      const response = await api.post('/admin/users/notifications/send', {
-        userId: user.id,
+      const response = await adminService.sendDirectNotification(user.id, user.role, {
         title: title,
         message: message,
         type: 'NORMAL',
@@ -71,14 +70,48 @@ const SingleUserModal = ({ user, onClose }) => {
     }
   };
 
+  const handleBlockUnblock = async () => {
+    setIsBlocking(true);
+    try {
+      if (isBlocked) {
+        await adminService.unblockUser(user.id);
+        setModal({
+          isOpen: true,
+          type: 'success',
+          title: 'User Unblocked',
+          message: 'The user has been successfully unblocked.',
+        });
+      } else {
+        await adminService.blockUser(user.id, { reason: 'Admin action' }); // Provide a default reason
+        setModal({
+          isOpen: true,
+          type: 'success',
+          title: 'User Blocked',
+          message: 'The user has been successfully blocked.',
+        });
+      }
+      if (onUpdate) onUpdate(); // callback to refresh list
+    } catch (error) {
+      console.error('Failed to update user block status:', error);
+      setModal({
+        isOpen: true,
+        type: 'error',
+        title: 'Action Failed',
+        message: error.response?.data?.message || 'Failed to update user status.',
+      });
+    } finally {
+      setIsBlocking(false);
+    }
+  };
+
   const closeModal = () => {
     setModal((prev) => ({ ...prev, isOpen: false }));
   };
 
-  const isBlocked = user.isBlocked || user.role === "Blocked";
+  const isBlocked = user.isBlocked || user.role === "Blocked"; // basic check, might need refinement if 'role' isn't reliably 'Blocked'
 
   return (
-    <div className="fixed inset-0 z-[120] flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
+    <div className="fixed inset-0 z-120 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
       <div className="bg-white w-full max-w-4xl rounded-3xl overflow-hidden shadow-2xl relative animate-in fade-in zoom-in duration-200">
         <div className="flex justify-between items-center px-8 py-4 border-b">
           <h2 className="text-xl font-bold text-gray-700 mx-auto">User Details</h2>
@@ -108,12 +141,14 @@ const SingleUserModal = ({ user, onClose }) => {
 
             {/* Dynamic Block/Unblock Button */}
             <button
-              className={`w-full py-4 text-white font-bold rounded-2xl shadow-lg mt-4 transition-all ${isBlocked
-                ? "bg-gradient-to-r from-green-500 to-green-700 hover:from-green-600 hover:to-green-800"
-                : "bg-gradient-to-r from-purple-400 to-purple-600 hover:from-purple-500 hover:to-purple-700"
+              onClick={handleBlockUnblock}
+              disabled={isBlocking}
+              className={`w-full py-4 text-white font-bold rounded-2xl shadow-lg mt-4 transition-all disabled:opacity-50 disabled:cursor-not-allowed ${isBlocked
+                ? "bg-linear-to-r from-green-500 to-green-700 hover:from-green-600 hover:to-green-800"
+                : "bg-linear-to-r from-purple-400 to-purple-600 hover:from-purple-500 hover:to-purple-700"
                 }`}
             >
-              {isBlocked ? "Unblock User" : "Block User"}
+              {isBlocking ? 'Processing...' : (isBlocked ? "Unblock User" : "Block User")}
             </button>
           </div>
 

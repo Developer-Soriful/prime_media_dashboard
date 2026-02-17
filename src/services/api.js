@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = import.meta.env.VITE_PRODUCTION_API_BASE_URL
+const API_BASE_URL = import.meta.env.DEV ? '/' : import.meta.env.VITE_PRODUCTION_API_BASE_URL;
 
 const api = axios.create({
     baseURL: API_BASE_URL,
@@ -20,7 +20,6 @@ api.interceptors.request.use((config) => {
     return config;
 });
 
-// Response interceptor - DO NOT return response.data here!
 api.interceptors.response.use(
     (response) => {
         return response;
@@ -48,12 +47,6 @@ export const patch = (url, data, config = {}) =>
 
 export const del = (url, config = {}) =>
     api.delete(url, config).then((res) => res.data);
-
-// Helper to fetch image via proxy to avoid CORS issues
-// export const getImageUrl = (relativePath) => {
-//     // Proxy through your backend so the browser sees same-origin
-//     return `${API_BASE_URL.replace('/api', '')}/proxy-image?path=${encodeURIComponent(relativePath)}`;
-// };
 
 export default {
     get,

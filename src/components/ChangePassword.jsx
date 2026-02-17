@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Lock, Eye, EyeOff, ShieldCheck, KeyRound } from 'lucide-react';
+import adminService from '../services/adminService';
 
 const ChangePassword = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -9,6 +10,7 @@ const ChangePassword = () => {
     newPassword: '',
     confirmPassword: ''
   });
+  const [loading, setLoading] = useState(false);
 
   const handleToggleShow = (field) => {
     setShowPass((prev) => ({ ...prev, [field]: !prev[field] }));
@@ -18,14 +20,31 @@ const ChangePassword = () => {
     setPasswords({ ...passwords, [e.target.name]: e.target.value });
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     if (passwords.newPassword !== passwords.confirmPassword) {
       alert("New passwords do not match!");
       return;
     }
-    // Add your API call logic here
-    console.log("Password Changed Successfully", passwords);
-    setIsEditing(false);
+
+    setLoading(true);
+    try {
+      // Map to expected API fields: currentPassword, newPassword, confirmPassword
+      // Our state uses 'oldPassword', so we map it.
+      await adminService.changePassword({
+        currentPassword: passwords.oldPassword,
+        newPassword: passwords.newPassword,
+        confirmPassword: passwords.confirmPassword
+      });
+
+      alert("Password changed successfully!");
+      setPasswords({ oldPassword: '', newPassword: '', confirmPassword: '' });
+      setIsEditing(false);
+    } catch (error) {
+      console.error("Password change failed:", error);
+      alert(error.response?.data?.message || "Failed to change password.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -35,14 +54,13 @@ const ChangePassword = () => {
         <h2 className="text-xl font-semibold text-indigo-700 flex items-center gap-2">
           <ShieldCheck size={22} /> Security Settings
         </h2>
-        
-        <button 
+
+        <button
           onClick={() => isEditing ? handleSave() : setIsEditing(true)}
-          className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all font-medium ${
-            isEditing 
-            ? 'bg-green-600 hover:bg-green-700 text-white' 
-            : 'bg-indigo-600 hover:bg-indigo-700 text-white'
-          }`}
+          className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all font-medium ${isEditing
+              ? 'bg-green-600 hover:bg-green-700 text-white'
+              : 'bg-indigo-600 hover:bg-indigo-700 text-white'
+            }`}
         >
           {isEditing ? <><KeyRound size={18} /> Update Password</> : 'Change Password'}
         </button>
@@ -59,11 +77,10 @@ const ChangePassword = () => {
               placeholder="••••••••"
               disabled={!isEditing}
               onChange={handleChange}
-              className={`w-full p-3 pr-12 rounded-lg border transition-all ${
-                isEditing ? 'border-indigo-400 bg-white' : 'border-gray-200 bg-gray-50'
-              } outline-none`}
+              className={`w-full p-3 pr-12 rounded-lg border transition-all ${isEditing ? 'border-indigo-400 bg-white' : 'border-gray-200 bg-gray-50'
+                } outline-none`}
             />
-            <button 
+            <button
               onClick={() => handleToggleShow('old')}
               className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-indigo-600"
             >
@@ -82,11 +99,10 @@ const ChangePassword = () => {
               placeholder="Enter new password"
               disabled={!isEditing}
               onChange={handleChange}
-              className={`w-full p-3 pr-12 rounded-lg border transition-all ${
-                isEditing ? 'border-indigo-400 bg-white' : 'border-gray-200 bg-gray-50'
-              } outline-none`}
+              className={`w-full p-3 pr-12 rounded-lg border transition-all ${isEditing ? 'border-indigo-400 bg-white' : 'border-gray-200 bg-gray-50'
+                } outline-none`}
             />
-            <button 
+            <button
               onClick={() => handleToggleShow('new')}
               className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-indigo-600"
             >
@@ -105,11 +121,10 @@ const ChangePassword = () => {
               placeholder="Repeat new password"
               disabled={!isEditing}
               onChange={handleChange}
-              className={`w-full p-3 pr-12 rounded-lg border transition-all ${
-                isEditing ? 'border-indigo-400 bg-white' : 'border-gray-200 bg-gray-50'
-              } outline-none`}
+              className={`w-full p-3 pr-12 rounded-lg border transition-all ${isEditing ? 'border-indigo-400 bg-white' : 'border-gray-200 bg-gray-50'
+                } outline-none`}
             />
-            <button 
+            <button
               onClick={() => handleToggleShow('confirm')}
               className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-indigo-600"
             >
