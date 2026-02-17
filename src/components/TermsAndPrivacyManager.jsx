@@ -32,13 +32,13 @@ const TermsAndPrivacyManager = () => {
       <div className="flex gap-4 mb-10">
         <button
           onClick={() => { setActiveTab('terms'); setIsEditing(false); }}
-          className={`px-6 py-2 rounded-xl border border-[#6200EE] font-medium transition-all ${activeTab === 'terms' ? 'bg-[#F3E8FF] text-[#6200EE]' : 'bg-gray-100 text-gray-400'}`}
+          className={`px-6 py-2 rounded-xl border border-[#6200EE] cursor-pointer font-medium transition-all ${activeTab === 'terms' ? 'bg-[#F3E8FF] text-[#6200EE]' : 'bg-gray-100 text-gray-400'}`}
         >
           Terms & Condition
         </button>
         <button
           onClick={() => { setActiveTab('privacy'); setIsEditing(false); }}
-          className={`px-6 py-2 rounded-xl border border-[#6200EE] font-medium transition-all ${activeTab === 'privacy' ? 'bg-[#F3E8FF] text-[#6200EE]' : 'bg-gray-100 text-gray-400'}`}
+          className={`px-6 py-2 rounded-xl border border-[#6200EE] cursor-pointer font-medium transition-all ${activeTab === 'privacy' ? 'bg-[#F3E8FF] text-[#6200EE]' : 'bg-gray-100 text-gray-400'}`}
         >
           Privacy Policy
         </button>

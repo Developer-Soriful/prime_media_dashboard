@@ -1,0 +1,678 @@
+{
+  "info": {
+    "_postman_id": "a8644c15-f529-44dd-8a56-092f3f3885b9",
+    "name": "Admin Provider Verification Copy",
+    "description": "Collection for Admin to manage Provider Verification requests as shown in the mockup images.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49361607",
+    "_collection_link": "https://go.postman.co/collection/49361607-a8644c15-f529-44dd-8a56-092f3f3885b9?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "1. Get Pending Verifications",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/admin/verifications?page=1&limit=10",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "verifications"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        },
+        "description": "Get a list of all providers with PENDING or IN_REVIEW status."
+      },
+      "response": [
+        {
+          "name": "1. Get Pending Verifications",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{accessToken}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/verifications?page=1&limit=10",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "verifications"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=15552000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"47d-jCtPpJdVsPqyORzqCH8t1WZyvGc\""
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 17 Feb 2026 01:47:38 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": \"cc1b5298-4004-4a57-8655-807dfe540051\",\n                \"name\": \"RASHED01\",\n                \"email\": \"9r1ggrffgggarbvtp@mkzaso.com\",\n                \"profilePicture\": null,\n                \"status\": \"PENDING\",\n                \"createdAt\": \"2026-02-15T14:13:55.614Z\"\n            },\n            {\n                \"id\": \"785fa6e1-b680-480b-86d8-08dff63b9d8d\",\n                \"name\": \"Md soriful Islam\",\n                \"email\": \"45729098soriful@gmail.com\",\n                \"profilePicture\": \"https://lh3.googleusercontent.com/a/ACg8ocInveMuUYfao5qXnfeh4PkovBxyXE2qe2aeElt7isqPZFinkg=s96-c\",\n                \"status\": \"PENDING\",\n                \"createdAt\": \"2026-02-15T00:43:31.379Z\"\n            },\n            {\n                \"id\": \"98509053-814a-42ba-9e56-5965f063f06c\",\n                \"name\": \"RASHED01\",\n                \"email\": \"47ixfrds8vov@wnbaldwy.com\",\n                \"profilePicture\": null,\n                \"status\": \"PENDING\",\n                \"createdAt\": \"2026-02-14T21:43:44.100Z\"\n            },\n            {\n                \"id\": \"d0fea813-cb13-4e2f-acd7-a1de52e40fda\",\n                \"name\": \"Md Soriful Islam\",\n                \"email\": \"dev.soriful@gmail.com\",\n                \"profilePicture\": null,\n                \"status\": \"PENDING\",\n                \"createdAt\": \"2026-02-14T19:44:04.137Z\"\n            },\n            {\n                \"id\": \"cc22dd01-922b-4011-a46f-090a8f217eb8\",\n                \"name\": \"RASHED01\",\n                \"email\": \"47ixfr8vov@wnbaldwy.com\",\n                \"profilePicture\": null,\n                \"status\": \"PENDING\",\n                \"createdAt\": \"2026-02-14T18:47:49.276Z\"\n            }\n        ],\n        \"pagination\": {\n            \"page\": 1,\n            \"limit\": 10,\n            \"total\": 5,\n            \"totalPages\": 1\n        }\n    },\n    \"meta\": {\n        \"timestamp\": \"2026-02-17T01:47:38.254Z\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "2. Get Verification Details",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/admin/verifications/{{providerUserId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "verifications",
+            "{{providerUserId}}"
+          ]
+        },
+        "description": "Get detailed information for a specific provider verification request, including Business Info, Bank Details, and Documents."
+      },
+      "response": [
+        {
+          "name": "2. Get Verification Details",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{accessToken}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/verifications/{{providerUserId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "verifications",
+                "{{providerUserId}}"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=15552000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "389"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"185-r12pnf19EpcTD9FE8oNe6/Jq+rw\""
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 17 Feb 2026 01:48:06 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"data\": {\n        \"user\": {\n            \"id\": \"cc1b5298-4004-4a57-8655-807dfe540051\",\n            \"email\": \"9r1ggrffgggarbvtp@mkzaso.com\",\n            \"phone\": null,\n            \"status\": \"PENDING\",\n            \"isVerified\": false\n        },\n        \"profile\": {\n            \"name\": \"RASHED01\",\n            \"firstName\": \"RASHED01\",\n            \"lastName\": \"\",\n            \"profilePicture\": null,\n            \"phoneNumber\": \"0187764576544\"\n        },\n        \"businessInfo\": null,\n        \"bankDetails\": null,\n        \"documents\": []\n    },\n    \"meta\": {\n        \"timestamp\": \"2026-02-17T01:48:06.770Z\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "3. Approve Provider",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/admin/verifications/{{providerUserId}}/approve",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "verifications",
+            "{{providerUserId}}",
+            "approve"
+          ]
+        },
+        "description": "Approve the provider's verification request. Sets status to APPROVED and activates the provider."
+      },
+      "response": [
+        {
+          "name": "3. Approve Provider",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{accessToken}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/verifications/{{providerUserId}}/approve",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "verifications",
+                "{{providerUserId}}",
+                "approve"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=15552000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "151"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"97-sIJer5S8l6osKWmoVu8s5iaDEe4\""
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 17 Feb 2026 01:48:39 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"data\": {\n        \"success\": true,\n        \"message\": \"Provider approved successfully\",\n        \"status\": \"APPROVED\"\n    },\n    \"meta\": {\n        \"timestamp\": \"2026-02-17T01:48:39.150Z\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "4. Reject Provider",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"reason\": \"Documents are incomplete or invalid.\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/admin/verifications/{{providerUserId}}/reject",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "verifications",
+            "{{providerUserId}}",
+            "reject"
+          ]
+        },
+        "description": "Reject the provider's verification request. Sets status to REJECTED."
+      },
+      "response": [
+        {
+          "name": "4. Reject Provider",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{accessToken}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"reason\": \"Documents are incomplete or invalid.\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/verifications/{{providerUserId}}/reject",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "verifications",
+                "{{providerUserId}}",
+                "reject"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=15552000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "151"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"97-wgIo/62+38TNVvPJ2ffUbtWwb6s\""
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 17 Feb 2026 01:48:53 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"data\": {\n        \"success\": true,\n        \"message\": \"Provider verification rejected\",\n        \"status\": \"REJECTED\"\n    },\n    \"meta\": {\n        \"timestamp\": \"2026-02-17T01:48:53.061Z\"\n    }\n}"
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3001",
+      "type": "string"
+    },
+    {
+      "key": "accessToken",
+      "value": "YOUR_ADMIN_TOKEN_HERE",
+      "type": "string"
+    },
+    {
+      "key": "providerUserId",
+      "value": "PROVIDER_USER_ID_HERE",
+      "type": "string"
+    }
+  ]
+}
