@@ -1,4 +1,3 @@
-import React from 'react';
 import DynamicPromotionManager from '../components/DynamicPromotionManager';
 
 const PromotionPage = () => {
