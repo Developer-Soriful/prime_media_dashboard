@@ -41,7 +41,6 @@ const DashboardOverview = () => {
       try {
         const response = await adminService.getDashboardOverview();
         console.log("Dashboard data:", response.data);
-
         if (response && response.success) {
           setDashboardData(response.data);
         } else if (response && response.data) {

@@ -121,14 +121,6 @@ const LoginSection = () => {
 
             {/* Helpers */}
             <div className="flex items-center justify-between text-xs sm:text-sm">
-              <label className="flex items-center text-gray-500 cursor-pointer">
-                <input
-                  type="checkbox"
-                  name="rememberMe"
-                  className="mr-2 w-4 h-4 accent-[#6200EE]"
-                />
-                Remember me
-              </label>
               <Link
                 to={"forgot-password"}
                 className="text-gray-500 hover:text-[#6200EE] transition-colors"

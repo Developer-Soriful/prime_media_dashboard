@@ -11,8 +11,8 @@ export const AuthProvider = ({ children }) => {
             const token = localStorage.getItem("authToken");
             if (token) {
                 try {
-                    const res = await api.get("/users/me");
-                    setUser(res.data);
+                    const res = await api.get("/api/users/me");
+                    setUser(res.data?.user || res.data);
                 } catch (error) {
                     console.error("Auth check failed:", error);
                     localStorage.removeItem("authToken");
@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
     // LOGIN FUNCTION
     const login = async (email, password) => {
         try {
-            const res = await api.post("/auth/login", { email, password });
+            const res = await api.post("/api/auth/login", { email, password });
             console.log("Login API Response:", res);
 
             if (res.success && res.data) {
@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
 
                 if (token) {
                     localStorage.setItem("authToken", token);
-                    const userRes = await api.get("/users/me");
+                    const userRes = await api.get("/api/users/me");
                     console.log("User Details Response:", userRes);
                     setUser(userRes.data?.user || userRes.data || userRes);
                 } else {
@@ -46,8 +46,8 @@ export const AuthProvider = ({ children }) => {
                 }
             } else if (res.token) {
                 localStorage.setItem("authToken", res.token);
-                const userRes = await api.get("/users/me");
-                setUser(userRes.data);
+                const userRes = await api.get("/api/users/me");
+                setUser(userRes.data?.user || userRes.data);
             } else {
                 console.warn("Unknown response structure:", res);
             }

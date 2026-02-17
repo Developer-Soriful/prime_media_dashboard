@@ -28,8 +28,6 @@ const ChangePassword = () => {
 
     setLoading(true);
     try {
-      // Map to expected API fields: currentPassword, newPassword, confirmPassword
-      // Our state uses 'oldPassword', so we map it.
       await adminService.changePassword({
         currentPassword: passwords.oldPassword,
         newPassword: passwords.newPassword,
@@ -56,13 +54,13 @@ const ChangePassword = () => {
         </h2>
 
         <button
-          onClick={() => isEditing ? handleSave() : setIsEditing(true)}
+          onClick={() => setIsEditing(!isEditing)}
           className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all font-medium ${isEditing
-              ? 'bg-green-600 hover:bg-green-700 text-white'
-              : 'bg-indigo-600 hover:bg-indigo-700 text-white'
+            ? 'bg-red-500 hover:bg-red-600 text-white'
+            : 'bg-indigo-600 hover:bg-indigo-700 text-white'
             }`}
         >
-          {isEditing ? <><KeyRound size={18} /> Update Password</> : 'Change Password'}
+          {isEditing ? 'Cancel' : 'Change Password'}
         </button>
       </div>
 
@@ -74,8 +72,9 @@ const ChangePassword = () => {
             <input
               type={showPass.old ? "text" : "password"}
               name="oldPassword"
-              placeholder="••••••••"
+              placeholder="Enter Current Password"
               disabled={!isEditing}
+              value={passwords.oldPassword}
               onChange={handleChange}
               className={`w-full p-3 pr-12 rounded-lg border transition-all ${isEditing ? 'border-indigo-400 bg-white' : 'border-gray-200 bg-gray-50'
                 } outline-none`}
@@ -98,6 +97,7 @@ const ChangePassword = () => {
               name="newPassword"
               placeholder="Enter new password"
               disabled={!isEditing}
+              value={passwords.newPassword}
               onChange={handleChange}
               className={`w-full p-3 pr-12 rounded-lg border transition-all ${isEditing ? 'border-indigo-400 bg-white' : 'border-gray-200 bg-gray-50'
                 } outline-none`}
@@ -120,6 +120,7 @@ const ChangePassword = () => {
               name="confirmPassword"
               placeholder="Repeat new password"
               disabled={!isEditing}
+              value={passwords.confirmPassword}
               onChange={handleChange}
               className={`w-full p-3 pr-12 rounded-lg border transition-all ${isEditing ? 'border-indigo-400 bg-white' : 'border-gray-200 bg-gray-50'
                 } outline-none`}
@@ -134,11 +135,25 @@ const ChangePassword = () => {
         </div>
       </div>
 
-      {/* Helper Text */}
+      {/* Helper Text & Save Button */}
       {isEditing && (
-        <p className="mt-4 text-sm text-gray-500 italic">
-          * Password must be at least 8 characters long and include a symbol.
-        </p>
+        <div className="mt-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <p className="text-sm text-gray-500 italic">
+            * Password must be at least 8 characters long and include a symbol.
+          </p>
+          <button
+            onClick={handleSave}
+            disabled={loading}
+            className="flex items-center justify-center gap-2 px-8 py-3 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-300 text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-indigo-200"
+          >
+            {loading ? (
+              <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+            ) : (
+              <KeyRound size={20} />
+            )}
+            {loading ? 'Updating...' : 'Save Changes'}
+          </button>
+        </div>
       )}
     </div>
   );

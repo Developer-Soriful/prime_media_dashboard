@@ -1,11 +1,11 @@
 {
   "info": {
-    "_postman_id": "47299d85-821f-44a6-863c-527786b7f8d2",
+    "_postman_id": "326c015e-d4f2-4210-bad5-a5f6bb5c06a6",
     "name": "PrimeMedia Backend API",
     "description": "Complete API collection for PrimeMedia backend - TikTok-style short-video marketplace",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "49531087",
-    "_collection_link": "https://go.postman.co/collection/49531087-47299d85-821f-44a6-863c-527786b7f8d2?source=collection_link"
+    "_exporter_id": "50452444",
+    "_collection_link": "https://go.postman.co/collection/49361607-326c015e-d4f2-4210-bad5-a5f6bb5c06a6?source=collection_link"
   },
   "item": [
     {
@@ -99,10 +99,7 @@
                   "name": "New Request",
                   "request": {
                     "method": "GET",
-                    "header": [],
-                    "url": {
-                      "raw": ""
-                    }
+                    "header": []
                   },
                   "response": []
                 }
@@ -115,7 +112,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"fullName\": \"MD Soriful Islam\",\n    \"email\": \"dev.soriful@gmail.com\",\n    \"phone\": \"01877645664\",\n    \"password\": \"(Developer-Soriful12)\",\n    \"confirmPassword\": \"(Developer-Soriful12)\",\n    \"isCustomer\": false\n}",
+                  "raw": "{\n    \"fullName\": \"RASHED01\",\n    \"email\": \"9r1ggarbvtp@mkzaso.com\",\n    \"phone\": \"01877645644\",\n    \"password\": \"(Developer-Soriful12)\",\n    \"confirmPassword\": \"(Developer-Soriful12)\",\n    \"isCustomer\": true\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -166,7 +163,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -287,7 +284,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -406,7 +403,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -577,7 +574,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -703,7 +700,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -829,7 +826,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -925,10 +922,7 @@
               "name": "login-sinup-verification",
               "request": {
                 "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": ""
-                }
+                "header": []
               },
               "response": [
                 {
@@ -970,7 +964,7 @@
                   },
                   "status": "Unauthorized",
                   "code": 401,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -1099,7 +1093,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -1198,7 +1192,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "// Admin \n{\n    \"email\": \"9r1ggarbvtp@mkzaso.com\" ,\n    \"password\": \"NewPassword@123\"\n}\n// customer\n// {\n//     \"email\": \"9r1garbvtp@mkzaso.com\" ,\n//     \"password\": \"(Developer-Soriful12)\"\n// }",
+                  "raw": "// provider \n{\n    \"email\": \"icbrcdiaxe@mkzaso.com\" ,\n    \"password\": \"(Developer-Soriful11)\"\n}\n// customer\n// {\n//     \"email\": \"9r1garbvtp@mkzaso.com\" ,\n//     \"password\": \"(Developer-Soriful12)\"\n// }",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -1248,7 +1242,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -1368,7 +1362,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -1488,7 +1482,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -1608,7 +1602,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -1728,7 +1722,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -1846,7 +1840,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -1964,7 +1958,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -2083,7 +2077,7 @@
                   },
                   "status": "Forbidden",
                   "code": 403,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -2202,7 +2196,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -2301,7 +2295,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"email\": \"dev.soriful@gmail.com\"\n}",
+                  "raw": "{\n    \"email\": \"ratul@example.com\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -2309,10 +2303,12 @@
                   }
                 },
                 "url": {
-                  "raw": "{{baseUrl}}/api/auth/forgot-password",
+                  "raw": "http://localhost:3001/api/auth/forgot-password",
+                  "protocol": "http",
                   "host": [
-                    "{{baseUrl}}"
+                    "localhost"
                   ],
+                  "port": "3001",
                   "path": [
                     "api",
                     "auth",
@@ -2351,7 +2347,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -2471,7 +2467,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -2570,7 +2566,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"email\": \"dev.soriful@gmail.com\",\n    \"otp\": \"266443\"\n}",
+                  "raw": "{\n    \"email\": \"ratul@example.com\",\n    \"otp\": \"123456\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -2578,10 +2574,12 @@
                   }
                 },
                 "url": {
-                  "raw": "{{baseUrl}}/api/auth/verify-forgot-otp",
+                  "raw": "http://localhost:3001/api/auth/verify-forgot-otp",
+                  "protocol": "http",
                   "host": [
-                    "{{baseUrl}}"
+                    "localhost"
                   ],
+                  "port": "3001",
                   "path": [
                     "api",
                     "auth",
@@ -2620,7 +2618,7 @@
                   },
                   "status": "Bad Request",
                   "code": 400,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -2753,7 +2751,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -2870,9 +2868,12 @@
                   }
                 },
                 "url": {
-                  "raw": "{{baseUrl}}/api/auth/reset-password",
+                  "raw": "https://loop-myself-move-told.trycloudflare.com/api/auth/reset-password",
+                  "protocol": "https",
                   "host": [
-                    "{{baseUrl}}"
+                    "loop-myself-move-told",
+                    "trycloudflare",
+                    "com"
                   ],
                   "path": [
                     "api",
@@ -2912,7 +2913,7 @@
                   },
                   "status": "Unauthorized",
                   "code": 401,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -3032,7 +3033,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -3183,7 +3184,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -3303,7 +3304,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -3462,7 +3463,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -3628,7 +3629,7 @@
               },
               "status": "Created",
               "code": 201,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -3752,7 +3753,7 @@
               },
               "status": "Created",
               "code": 201,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -3879,6 +3880,15 @@
                     "type": "text"
                   }
                 ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
                 "url": {
                   "raw": "{{baseUrl}}/api/customer/profile",
                   "host": [
@@ -3893,7 +3903,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -4008,7 +4018,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -4167,7 +4177,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -4291,7 +4301,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -4415,7 +4425,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -4539,7 +4549,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -4680,7 +4690,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -4844,7 +4854,7 @@
               },
               "status": "Created",
               "code": 201,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -4968,7 +4978,7 @@
               },
               "status": "Conflict",
               "code": 409,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -5127,7 +5137,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -5251,7 +5261,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -5392,7 +5402,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -5507,7 +5517,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -5622,7 +5632,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -5737,7 +5747,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -5852,7 +5862,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -5967,7 +5977,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -6108,7 +6118,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -6204,10 +6214,7 @@
           "name": "New Request",
           "request": {
             "method": "GET",
-            "header": [],
-            "url": {
-              "raw": ""
-            }
+            "header": []
           },
           "response": [
             {
@@ -6235,7 +6242,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -6381,7 +6388,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -6524,7 +6531,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -6736,7 +6743,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -6845,7 +6852,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -7003,7 +7010,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -7126,7 +7133,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -7249,7 +7256,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -7391,7 +7398,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -7523,7 +7530,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -7688,7 +7695,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -7814,7 +7821,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -7944,7 +7951,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -8084,7 +8091,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -8196,7 +8203,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -8338,7 +8345,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -8439,6 +8446,15 @@
                         "description": "JWT token from provider login"
                       }
                     ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
                     "url": {
                       "raw": "{{base_url}}/api/schedules/my-schedule",
                       "host": [
@@ -8453,7 +8469,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -8558,6 +8574,15 @@
                         "description": "JWT token from provider login"
                       }
                     ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
                     "url": {
                       "raw": "{{base_url}}/api/schedules/my-schedule",
                       "host": [
@@ -8572,7 +8597,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -8687,7 +8712,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -8849,7 +8874,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -9075,7 +9100,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -9247,10 +9272,7 @@
               "name": "open time\\",
               "request": {
                 "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": ""
-                }
+                "header": []
               },
               "response": [
                 {
@@ -9301,7 +9323,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -9439,7 +9461,7 @@
                   },
                   "status": "Conflict",
                   "code": 409,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -9572,7 +9594,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -9733,10 +9755,7 @@
           "name": "New Request",
           "request": {
             "method": "GET",
-            "header": [],
-            "url": {
-              "raw": ""
-            }
+            "header": []
           },
           "response": [
             {
@@ -9771,7 +9790,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -9893,7 +9912,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -10019,7 +10038,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -10115,10 +10134,7 @@
           "name": "New Request",
           "request": {
             "method": "GET",
-            "header": [],
-            "url": {
-              "raw": ""
-            }
+            "header": []
           },
           "response": [
             {
@@ -10149,7 +10165,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -10300,7 +10316,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -10421,7 +10437,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -10591,7 +10607,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -10756,7 +10772,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -10883,7 +10899,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -11006,7 +11022,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -11129,7 +11145,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -11328,7 +11344,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -11526,7 +11542,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -11685,7 +11701,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -11807,7 +11823,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -11933,7 +11949,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -12058,6 +12074,10 @@
                   "originalRequest": {
                     "method": "GET",
                     "header": [],
+                    "body": {
+                      "mode": "urlencoded",
+                      "urlencoded": []
+                    },
                     "url": {
                       "raw": "{{baseUrl}}/api/services/:serviceId",
                       "host": [
@@ -12078,7 +12098,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -12197,7 +12217,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -12372,7 +12392,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -12529,7 +12549,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -12893,7 +12913,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -13021,7 +13041,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -13182,7 +13202,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -13340,7 +13360,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -13463,7 +13483,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -13622,10 +13642,7 @@
               "name": "top-services",
               "request": {
                 "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": ""
-                }
+                "header": []
               },
               "response": []
             }
@@ -13705,7 +13722,7 @@
                   },
                   "status": "Bad Request",
                   "code": 400,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -13828,7 +13845,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -13955,7 +13972,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -14100,7 +14117,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -14275,7 +14292,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -14428,7 +14445,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -14586,7 +14603,7 @@
                   },
                   "status": "Bad Request",
                   "code": 400,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -14709,7 +14726,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -14810,10 +14827,7 @@
               "name": "New Request",
               "request": {
                 "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": ""
-                }
+                "header": []
               },
               "response": []
             },
@@ -15065,7 +15079,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -15279,7 +15293,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -15433,7 +15447,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -15552,7 +15566,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -15706,7 +15720,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -15825,7 +15839,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -15994,7 +16008,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -16159,7 +16173,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -16286,7 +16300,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -16443,7 +16457,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -16610,7 +16624,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -16733,7 +16747,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -16856,7 +16870,7 @@
                   },
                   "status": "Bad Request",
                   "code": 400,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -16979,7 +16993,7 @@
                   },
                   "status": "Conflict",
                   "code": 409,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -17120,7 +17134,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -17268,7 +17282,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -17428,7 +17442,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -17588,7 +17602,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -17737,7 +17751,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -17881,7 +17895,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -18025,7 +18039,7 @@
                   },
                   "status": "Conflict",
                   "code": 409,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -18191,7 +18205,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -18345,7 +18359,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -18483,6 +18497,10 @@
                         "value": "Bearer {{accessToken}}"
                       }
                     ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"type\": \"SERVICE\",\n    \"itemId\": \"f0d7e6c5-b4a3-4d21-9e8d-7c6b5a4b3c2d\"\n}"
+                    },
                     "url": {
                       "raw": "{{baseUrl}}/api/saved-items/{{saved_id}}/details",
                       "host": [
@@ -18498,7 +18516,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -18644,7 +18662,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -18802,7 +18820,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -18929,7 +18947,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -19086,7 +19104,7 @@
               },
               "status": "Created",
               "code": 201,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -19241,7 +19259,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -19400,7 +19418,7 @@
               },
               "status": "Created",
               "code": 201,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -19555,7 +19573,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -19732,7 +19750,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -19891,7 +19909,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -20055,7 +20073,7 @@
               },
               "status": "Created",
               "code": 201,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -20214,7 +20232,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -20367,7 +20385,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -20636,7 +20654,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -20781,7 +20799,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -20924,7 +20942,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -21088,7 +21106,7 @@
               },
               "status": "Created",
               "code": 201,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -21243,7 +21261,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -21402,7 +21420,7 @@
               },
               "status": "Created",
               "code": 201,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -21557,7 +21575,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -21653,10 +21671,7 @@
           "name": "New Request",
           "request": {
             "method": "GET",
-            "header": [],
-            "url": {
-              "raw": ""
-            }
+            "header": []
           },
           "response": []
         }
@@ -21903,7 +21918,7 @@
               },
               "status": "Forbidden",
               "code": 403,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -22026,7 +22041,7 @@
               },
               "status": "Created",
               "code": 201,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -22171,7 +22186,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -22290,7 +22305,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -22445,7 +22460,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -22604,7 +22619,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -22730,7 +22745,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -22846,7 +22861,7 @@
               "variable": [
                 {
                   "key": "serviceId",
-                  "value": "service-uuid-here"
+                  "value": ""
                 }
               ]
             }
@@ -22879,7 +22894,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -23064,7 +23079,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -23249,10 +23264,7 @@
           "name": "New Request",
           "request": {
             "method": "GET",
-            "header": [],
-            "url": {
-              "raw": ""
-            }
+            "header": []
           },
           "response": [
             {
@@ -23275,7 +23287,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -23380,10 +23392,7 @@
           "name": "New Request",
           "request": {
             "method": "GET",
-            "header": [],
-            "url": {
-              "raw": ""
-            }
+            "header": []
           },
           "response": []
         }
@@ -24528,7 +24537,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -24650,7 +24659,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -24807,7 +24816,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -24950,7 +24959,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -25111,7 +25120,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -25280,7 +25289,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -25397,7 +25406,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -25567,7 +25576,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -25683,7 +25692,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -25799,7 +25808,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -25926,7 +25935,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -26038,7 +26047,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -26150,7 +26159,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -26295,7 +26304,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -26410,7 +26419,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -26552,7 +26561,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -26671,7 +26680,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -26790,7 +26799,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -26968,7 +26977,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -27093,7 +27102,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -27241,7 +27250,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -27391,7 +27400,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -27589,7 +27598,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -27734,7 +27743,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -27830,10 +27839,7 @@
               "name": "New Request",
               "request": {
                 "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": ""
-                }
+                "header": []
               },
               "response": [
                 {
@@ -27873,7 +27879,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -28025,9 +28031,7 @@
                       "key": "file",
                       "type": "file",
                       "uuid": "fc3abe39-accb-46e2-a878-3d216a70ee6c",
-                      "src": [
-                        "/C:/Users/tratu/OneDrive/Pictures/Screenshots/Screenshot 2026-01-27 012146.png"
-                      ]
+                      "src": "/C:/Users/tratu/OneDrive/Pictures/Screenshots/Screenshot 2026-01-27 012146.png"
                     }
                   ]
                 },
@@ -28045,7 +28049,7 @@
               },
               "status": "Created",
               "code": 201,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -28153,9 +28157,7 @@
                       "key": "file",
                       "type": "file",
                       "uuid": "fc3abe39-accb-46e2-a878-3d216a70ee6c",
-                      "src": [
-                        "/C:/Users/tratu/Downloads/simple_music.wav"
-                      ]
+                      "src": "/C:/Users/tratu/Downloads/simple_music.wav"
                     }
                   ]
                 },
@@ -28173,7 +28175,7 @@
               },
               "status": "Created",
               "code": 201,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -28271,6 +28273,636 @@
       "name": "ALL-MUSIC-API",
       "item": [
         {
+          "name": "4. Single Video Detail",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/video/:videoId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "video",
+                ":videoId"
+              ],
+              "variable": [
+                {
+                  "key": "videoId",
+                  "value": "PASTE_VIDEO_ID_HERE"
+                }
+              ]
+            },
+            "description": "Get detailed view of a single video with stats"
+          },
+          "response": [
+            {
+              "name": "4. Single Video Detail",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/video/:videoId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "video",
+                    ":videoId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "videoId",
+                      "value": "c58eacfe-3f71-4a73-b287-ecaca7a77c48"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Resource-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Origin-Agent-Cluster",
+                  "value": "?1"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "no-referrer"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=15552000; includeSubDomains"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-DNS-Prefetch-Control",
+                  "value": "off"
+                },
+                {
+                  "key": "X-Download-Options",
+                  "value": "noopen"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN"
+                },
+                {
+                  "key": "X-Permitted-Cross-Domain-Policies",
+                  "value": "none"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"785-gR4gsnPKEWKE1pCIf+JzHRHodr0\""
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 02 Feb 2026 20:56:15 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"c58eacfe-3f71-4a73-b287-ecaca7a77c48\",\n        \"providerId\": \"3f04f47d-2d9a-460c-9eba-03113a9971dc\",\n        \"type\": \"VIDEO\",\n        \"url\": \"https://media.istockphoto.com/id/1395170345/video/kyoto-japan-old-town-skyline-in-the-higashiyama-district.mp4?s=mp4-640x640-is&k=20&c=okP6ho9GjyQaBonfHbuObe0vXqhY_biCfmoqFLOQa5Q=\",\n        \"thumbnailUrl\": null,\n        \"duration\": null,\n        \"width\": null,\n        \"height\": null,\n        \"fileSize\": null,\n        \"title\": \"Travel Vlog\",\n        \"description\": \"My travel adventure\",\n        \"category\": \"Travel\",\n        \"location\": \"Tokyo, Japan\",\n        \"deletedAt\": null,\n        \"createdAt\": \"2026-02-02T20:27:20.951Z\",\n        \"viewsCount\": 0,\n        \"updatedAt\": \"2026-02-02T20:27:20.951Z\",\n        \"provider\": {\n            \"id\": \"3f04f47d-2d9a-460c-9eba-03113a9971dc\",\n            \"supabaseId\": \"c8a84906-80e5-4011-9b0f-77b5b2f527a8\",\n            \"role\": \"PROVIDER\",\n            \"email\": \"icbrcdiaxe@mkzaso.com\",\n            \"phone\": \"+8801888475365\",\n            \"authProvider\": \"email\",\n            \"isVerified\": true,\n            \"isActive\": false,\n            \"isProfileCompleted\": true,\n            \"createdAt\": \"2026-01-17T21:23:23.530Z\",\n            \"updatedAt\": \"2026-01-30T00:22:00.375Z\",\n            \"profile\": {\n                \"id\": \"b76c7dbe-a60b-4b58-9cd3-dda9d5aca5ac\",\n                \"userId\": \"3f04f47d-2d9a-460c-9eba-03113a9971dc\",\n                \"profilePicture\": \"https://res.cloudinary.com/daqxgkhyr/image/upload/v1768685302/lsjtaunyrwbzkrx3vypf.jpg\",\n                \"firstName\": \"TEST\",\n                \"lastName\": \"USER\",\n                \"phoneNumber\": \"+8801000000000\",\n                \"location\": null,\n                \"createdAt\": \"2026-01-17T21:23:23.767Z\",\n                \"updatedAt\": \"2026-01-19T23:52:22.242Z\"\n            }\n        },\n        \"_count\": {\n            \"likes\": 0,\n            \"comments\": 0\n        },\n        \"videoMusic\": {\n            \"id\": \"6a31530c-4f8b-49ea-b0af-7527a62172a9\",\n            \"videoId\": \"c58eacfe-3f71-4a73-b287-ecaca7a77c48\",\n            \"audioId\": \"3dc42ef2-c96e-448b-af76-be169781255d\",\n            \"startTime\": 6,\n            \"volume\": 0.7,\n            \"createdAt\": \"2026-02-02T20:37:21.363Z\",\n            \"updatedAt\": \"2026-02-02T20:37:21.363Z\",\n            \"audio\": {\n                \"id\": \"3dc42ef2-c96e-448b-af76-be169781255d\",\n                \"url\": \"https://ztybkkxolzfnpnsbjlix.supabase.co/storage/v1/object/public/media_bucket/audios/bee4517a-7086-4f2c-8f8c-c613649279e1.mp3\",\n                \"title\": \"fire-alarm-test-inside-an-apartment-438459.mp3\"\n            }\n        }\n    },\n    \"meta\": {\n        \"timestamp\": \"2026-02-02T20:56:15.528Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "6. Record View",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"watchTimeSeconds\": 15\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/media/:mediaId/view",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "media",
+                ":mediaId",
+                "view"
+              ],
+              "variable": [
+                {
+                  "key": "mediaId",
+                  "value": "PASTE_MEDIA_ID_HERE"
+                }
+              ]
+            },
+            "description": "Increment view count for a media item"
+          },
+          "response": [
+            {
+              "name": "6. Record View",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"watchTimeSeconds\": 1\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/media/:mediaId/view",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "media",
+                    ":mediaId",
+                    "view"
+                  ],
+                  "variable": [
+                    {
+                      "key": "mediaId",
+                      "value": "c58eacfe-3f71-4a73-b287-ecaca7a77c48"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Resource-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Origin-Agent-Cluster",
+                  "value": "?1"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "no-referrer"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=15552000; includeSubDomains"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-DNS-Prefetch-Control",
+                  "value": "off"
+                },
+                {
+                  "key": "X-Download-Options",
+                  "value": "noopen"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN"
+                },
+                {
+                  "key": "X-Permitted-Cross-Domain-Policies",
+                  "value": "none"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "195"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"c3-ubOBFiFNE89YrPe2FPGtwCSjyIw\""
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 02 Feb 2026 20:57:24 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"data\": {\n        \"counted\": false,\n        \"message\": \"Watch time threshold not met (need 10s or 30%)\",\n        \"thresholds\": {\n            \"minSeconds\": 10,\n            \"minPercent\": 30\n        }\n    },\n    \"meta\": {\n        \"timestamp\": \"2026-02-02T20:57:24.576Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "3. Video Feed (TikTok Style)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/videos/feed?limit=10&page=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "videos",
+                "feed"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Fetch random/latest videos with music info attached"
+          },
+          "response": [
+            {
+              "name": "3. Video Feed (TikTok Style)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/videos/feed?limit=10&page=1",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "videos",
+                    "feed"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Resource-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Origin-Agent-Cluster",
+                  "value": "?1"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "no-referrer"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=15552000; includeSubDomains"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-DNS-Prefetch-Control",
+                  "value": "off"
+                },
+                {
+                  "key": "X-Download-Options",
+                  "value": "noopen"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN"
+                },
+                {
+                  "key": "X-Permitted-Cross-Domain-Policies",
+                  "value": "none"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1620-pRvrZKMizabLFFGwOhahmYX8fOQ\""
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 02 Feb 2026 20:48:22 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"videoId\": \"c58eacfe-3f71-4a73-b287-ecaca7a77c48\",\n            \"videoUrl\": \"https://media.istockphoto.com/id/1395170345/video/kyoto-japan-old-town-skyline-in-the-higashiyama-district.mp4?s=mp4-640x640-is&k=20&c=okP6ho9GjyQaBonfHbuObe0vXqhY_biCfmoqFLOQa5Q=\",\n            \"title\": \"Travel Vlog\",\n            \"description\": \"My travel adventure\",\n            \"type\": \"VIDEO\",\n            \"music\": {\n                \"audioId\": \"3dc42ef2-c96e-448b-af76-be169781255d\",\n                \"audioUrl\": \"https://ztybkkxolzfnpnsbjlix.supabase.co/storage/v1/object/public/media_bucket/audios/bee4517a-7086-4f2c-8f8c-c613649279e1.mp3\",\n                \"title\": \"fire-alarm-test-inside-an-apartment-438459.mp3\",\n                \"startTime\": 6,\n                \"volume\": 0.7\n            },\n            \"provider\": {\n                \"id\": \"3f04f47d-2d9a-460c-9eba-03113a9971dc\",\n                \"profile\": {\n                    \"firstName\": \"TEST\",\n                    \"lastName\": \"USER\",\n                    \"profilePicture\": \"https://res.cloudinary.com/daqxgkhyr/image/upload/v1768685302/lsjtaunyrwbzkrx3vypf.jpg\"\n                }\n            },\n            \"stats\": {\n                \"likes\": 0,\n                \"comments\": 0,\n                \"viewsCount\": 0\n            }\n        },\n        {\n            \"videoId\": \"9a5058ab-3102-4f3b-820d-ce0ebe2c7103\",\n            \"videoUrl\": \"https://media.istockphoto.com/id/1395170345/video/kyoto-japan-old-town-skyline-in-the-higashiyama-district.mp4?s=mp4-640x640-is&k=20&c=okP6ho9GjyQaBonfHbuObe0vXqhY_biCfmoqFLOQa5Q=\",\n            \"title\": \"Travel Vlog\",\n            \"description\": \"My travel adventure\",\n            \"type\": \"VIDEO\",\n            \"music\": null,\n            \"provider\": {\n                \"id\": \"3f04f47d-2d9a-460c-9eba-03113a9971dc\",\n                \"profile\": {\n                    \"firstName\": \"TEST\",\n                    \"lastName\": \"USER\",\n                    \"profilePicture\": \"https://res.cloudinary.com/daqxgkhyr/image/upload/v1768685302/lsjtaunyrwbzkrx3vypf.jpg\"\n                }\n            },\n            \"stats\": {\n                \"likes\": 0,\n                \"comments\": 0,\n                \"viewsCount\": 0\n            }\n        },\n        {\n            \"videoId\": \"bf66ad47-d5d6-42a8-b917-9d488e0a9549\",\n            \"videoUrl\": \"https://media.istockphoto.com/id/1395170345/video/kyoto-japan-old-town-skyline-in-the-higashiyama-district.mp4?s=mp4-640x640-is&k=20&c=okP6ho9GjyQaBonfHbuObe0vXqhY_biCfmoqFLOQa5Q=\",\n            \"title\": \"Travel Vlog\",\n            \"description\": \"My travel adventure\",\n            \"type\": \"VIDEO\",\n            \"music\": null,\n            \"provider\": {\n                \"id\": \"3f04f47d-2d9a-460c-9eba-03113a9971dc\",\n                \"profile\": {\n                    \"firstName\": \"TEST\",\n                    \"lastName\": \"USER\",\n                    \"profilePicture\": \"https://res.cloudinary.com/daqxgkhyr/image/upload/v1768685302/lsjtaunyrwbzkrx3vypf.jpg\"\n                }\n            },\n            \"stats\": {\n                \"likes\": 0,\n                \"comments\": 0,\n                \"viewsCount\": 0\n            }\n        },\n        {\n            \"videoId\": \"ca8b6db1-d35e-4fa9-9fe0-a961ff112394\",\n            \"videoUrl\": \"https://media.istockphoto.com/id/1395170345/video/kyoto-japan-old-town-skyline-in-the-higashiyama-district.mp4?s=mp4-640x640-is&k=20&c=okP6ho9GjyQaBonfHbuObe0vXqhY_biCfmoqFLOQa5Q=\",\n            \"title\": \"Travel Vlog\",\n            \"description\": \"My travel adventure\",\n            \"type\": \"VIDEO\",\n            \"music\": null,\n            \"provider\": {\n                \"id\": \"e987e2e4-8a49-4d7e-841d-fa59c508f9f5\",\n                \"profile\": {\n                    \"firstName\": \"Rahim\",\n                    \"lastName\": \"Plumbing\",\n                    \"profilePicture\": null\n                }\n            },\n            \"stats\": {\n                \"likes\": 0,\n                \"comments\": 0,\n                \"viewsCount\": 0\n            }\n        },\n        {\n            \"videoId\": \"da26eb21-cd12-4cf2-978a-756273d19d38\",\n            \"videoUrl\": \"https://media.istockphoto.com/id/1395170345/video/kyoto-japan-old-town-skyline-in-the-higashiyama-district.mp4?s=mp4-640x640-is&k=20&c=okP6ho9GjyQaBonfHbuObe0vXqhY_biCfmoqFLOQa5Q=\",\n            \"title\": \"Travel Vlog\",\n            \"description\": \"My travel adventure\",\n            \"type\": \"VIDEO\",\n            \"music\": null,\n            \"provider\": {\n                \"id\": \"e987e2e4-8a49-4d7e-841d-fa59c508f9f5\",\n                \"profile\": {\n                    \"firstName\": \"Rahim\",\n                    \"lastName\": \"Plumbing\",\n                    \"profilePicture\": null\n                }\n            },\n            \"stats\": {\n                \"likes\": 0,\n                \"comments\": 0,\n                \"viewsCount\": 0\n            }\n        },\n        {\n            \"videoId\": \"e406c9f8-5667-4f45-978d-1cbadb669a4e\",\n            \"videoUrl\": \"https://media.istockphoto.com/id/1395170345/video/kyoto-japan-old-town-skyline-in-the-higashiyama-district.mp4?s=mp4-640x640-is&k=20&c=okP6ho9GjyQaBonfHbuObe0vXqhY_biCfmoqFLOQa5Q=\",\n            \"title\": \"Travel Vlog\",\n            \"description\": \"My travel adventure\",\n            \"type\": \"VIDEO\",\n            \"music\": null,\n            \"provider\": {\n                \"id\": \"3f04f47d-2d9a-460c-9eba-03113a9971dc\",\n                \"profile\": {\n                    \"firstName\": \"TEST\",\n                    \"lastName\": \"USER\",\n                    \"profilePicture\": \"https://res.cloudinary.com/daqxgkhyr/image/upload/v1768685302/lsjtaunyrwbzkrx3vypf.jpg\"\n                }\n            },\n            \"stats\": {\n                \"likes\": 1,\n                \"comments\": 0,\n                \"viewsCount\": 0\n            }\n        },\n        {\n            \"videoId\": \"82e068db-b6cc-422e-92f8-6e14e21574cd\",\n            \"videoUrl\": \"https://vibeshare-mediaserver.s3.amazonaws.com/prime-media/post/1768775988681_0.mp4\",\n            \"title\": \"Test\",\n            \"description\": \"Hello hello\",\n            \"type\": \"VIDEO\",\n            \"music\": null,\n            \"provider\": {\n                \"id\": \"3f04f47d-2d9a-460c-9eba-03113a9971dc\",\n                \"profile\": {\n                    \"firstName\": \"TEST\",\n                    \"lastName\": \"USER\",\n                    \"profilePicture\": \"https://res.cloudinary.com/daqxgkhyr/image/upload/v1768685302/lsjtaunyrwbzkrx3vypf.jpg\"\n                }\n            },\n            \"stats\": {\n                \"likes\": 3,\n                \"comments\": 1,\n                \"viewsCount\": 0\n            }\n        },\n        {\n            \"videoId\": \"d053b1fa-b130-41e7-a995-225236a8e940\",\n            \"videoUrl\": \"https://media.istockphoto.com/id/1395170345/video/kyoto-japan-old-town-skyline-in-the-higashiyama-district.mp4?s=mp4-640x640-is&k=20&c=okP6ho9GjyQaBonfHbuObe0vXqhY_biCfmoqFLOQa5Q=\",\n            \"title\": \"Travel Vlog\",\n            \"description\": \"My travel adventure\",\n            \"type\": \"VIDEO\",\n            \"music\": null,\n            \"provider\": {\n                \"id\": \"3f04f47d-2d9a-460c-9eba-03113a9971dc\",\n                \"profile\": {\n                    \"firstName\": \"TEST\",\n                    \"lastName\": \"USER\",\n                    \"profilePicture\": \"https://res.cloudinary.com/daqxgkhyr/image/upload/v1768685302/lsjtaunyrwbzkrx3vypf.jpg\"\n                }\n            },\n            \"stats\": {\n                \"likes\": 2,\n                \"comments\": 0,\n                \"viewsCount\": 0\n            }\n        },\n        {\n            \"videoId\": \"df636d23-b24b-4c3a-a21d-521ab237fbef\",\n            \"videoUrl\": \"https://cdn.pixabay.com/video/2015/11/28/1438-147170157_medium.mp4\",\n            \"title\": \"Dinosaur\",\n            \"description\": \"🦕\",\n            \"type\": \"VIDEO\",\n            \"music\": null,\n            \"provider\": {\n                \"id\": \"3f04f47d-2d9a-460c-9eba-03113a9971dc\",\n                \"profile\": {\n                    \"firstName\": \"TEST\",\n                    \"lastName\": \"USER\",\n                    \"profilePicture\": \"https://res.cloudinary.com/daqxgkhyr/image/upload/v1768685302/lsjtaunyrwbzkrx3vypf.jpg\"\n                }\n            },\n            \"stats\": {\n                \"likes\": 3,\n                \"comments\": 1,\n                \"viewsCount\": 0\n            }\n        },\n        {\n            \"videoId\": \"662184f8-f287-46a2-bef2-47cc4161bfe0\",\n            \"videoUrl\": \"https://cdn.pixabay.com/video/2015/11/28/1438-147170157_medium.mp4\",\n            \"title\": \"Dinosaur\",\n            \"description\": \"🦕\",\n            \"type\": \"VIDEO\",\n            \"music\": null,\n            \"provider\": {\n                \"id\": \"3f04f47d-2d9a-460c-9eba-03113a9971dc\",\n                \"profile\": {\n                    \"firstName\": \"TEST\",\n                    \"lastName\": \"USER\",\n                    \"profilePicture\": \"https://res.cloudinary.com/daqxgkhyr/image/upload/v1768685302/lsjtaunyrwbzkrx3vypf.jpg\"\n                }\n            },\n            \"stats\": {\n                \"likes\": 4,\n                \"comments\": 1,\n                \"viewsCount\": 0\n            }\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "2. Attach Music to Video",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"audioId\": \"PASTE_AUDIO_ID_HERE\",\n  \"startTime\": 0,\n  \"volume\": 0.7\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/video/:videoId/add-music",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "video",
+                ":videoId",
+                "add-music"
+              ],
+              "variable": [
+                {
+                  "key": "videoId",
+                  "value": "PASTE_VIDEO_ID_HERE"
+                }
+              ]
+            },
+            "description": "Link an existing audio (uploaded as type AUDIO) to a video"
+          },
+          "response": [
+            {
+              "name": "2. Attach Music to Video",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{token}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"audioId\": \"3dc42ef2-c96e-448b-af76-be169781255d\",\n  \"startTime\": 6,\n  \"volume\": 0.7\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/video/c58eacfe-3f71-4a73-b287-ecaca7a77c48/add-music",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "video",
+                    "c58eacfe-3f71-4a73-b287-ecaca7a77c48",
+                    "add-music"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Resource-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Origin-Agent-Cluster",
+                  "value": "?1"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "no-referrer"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=15552000; includeSubDomains"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-DNS-Prefetch-Control",
+                  "value": "off"
+                },
+                {
+                  "key": "X-Download-Options",
+                  "value": "noopen"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN"
+                },
+                {
+                  "key": "X-Permitted-Cross-Domain-Policies",
+                  "value": "none"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "150"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"96-XB1czcPzc1MxH2T/jeW3wyFrCq8\""
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 02 Feb 2026 20:37:21 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"data\": {\n        \"videoId\": \"c58eacfe-3f71-4a73-b287-ecaca7a77c48\",\n        \"audioId\": \"3dc42ef2-c96e-448b-af76-be169781255d\",\n        \"startTime\": 6,\n        \"volume\": 0.7\n    }\n}"
+            }
+          ]
+        },
+        {
           "name": "Get Music List (Library)",
           "request": {
             "method": "GET",
@@ -28342,7 +28974,7 @@
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "Text",
+              "_postman_previewlanguage": null,
               "header": [
                 {
                   "key": "Content-Security-Policy",
@@ -28451,7 +29083,121 @@
             },
             "description": "Fetches details for a single media item (e.g. for video edit screen info)."
           },
-          "response": []
+          "response": [
+            {
+              "name": "Get Single Music Details",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/media/3dc42ef2-c96e-448b-af76-be169781255d",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "media",
+                    "3dc42ef2-c96e-448b-af76-be169781255d"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Resource-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Origin-Agent-Cluster",
+                  "value": "?1"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "no-referrer"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=15552000; includeSubDomains"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-DNS-Prefetch-Control",
+                  "value": "off"
+                },
+                {
+                  "key": "X-Download-Options",
+                  "value": "noopen"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN"
+                },
+                {
+                  "key": "X-Permitted-Cross-Domain-Policies",
+                  "value": "none"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"56d-QnGNnN2rI+7chTH6/B6o+l6MrGI\""
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 02 Feb 2026 20:58:27 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"3dc42ef2-c96e-448b-af76-be169781255d\",\n        \"providerId\": \"3f04f47d-2d9a-460c-9eba-03113a9971dc\",\n        \"type\": \"AUDIO\",\n        \"url\": \"https://ztybkkxolzfnpnsbjlix.supabase.co/storage/v1/object/public/media_bucket/audios/bee4517a-7086-4f2c-8f8c-c613649279e1.mp3\",\n        \"thumbnailUrl\": null,\n        \"duration\": null,\n        \"width\": null,\n        \"height\": null,\n        \"fileSize\": 1010688,\n        \"title\": \"fire-alarm-test-inside-an-apartment-438459.mp3\",\n        \"description\": null,\n        \"category\": null,\n        \"location\": null,\n        \"deletedAt\": null,\n        \"createdAt\": \"2026-01-31T19:07:25.645Z\",\n        \"viewsCount\": 0,\n        \"updatedAt\": \"2026-01-31T19:07:25.645Z\",\n        \"provider\": {\n            \"id\": \"3f04f47d-2d9a-460c-9eba-03113a9971dc\",\n            \"supabaseId\": \"c8a84906-80e5-4011-9b0f-77b5b2f527a8\",\n            \"role\": \"PROVIDER\",\n            \"email\": \"icbrcdiaxe@mkzaso.com\",\n            \"phone\": \"+8801888475365\",\n            \"authProvider\": \"email\",\n            \"isVerified\": true,\n            \"isActive\": false,\n            \"isProfileCompleted\": true,\n            \"createdAt\": \"2026-01-17T21:23:23.530Z\",\n            \"updatedAt\": \"2026-01-30T00:22:00.375Z\",\n            \"profile\": {\n                \"id\": \"b76c7dbe-a60b-4b58-9cd3-dda9d5aca5ac\",\n                \"userId\": \"3f04f47d-2d9a-460c-9eba-03113a9971dc\",\n                \"profilePicture\": \"https://res.cloudinary.com/daqxgkhyr/image/upload/v1768685302/lsjtaunyrwbzkrx3vypf.jpg\",\n                \"firstName\": \"TEST\",\n                \"lastName\": \"USER\",\n                \"phoneNumber\": \"+8801000000000\",\n                \"location\": null,\n                \"createdAt\": \"2026-01-17T21:23:23.767Z\",\n                \"updatedAt\": \"2026-01-19T23:52:22.242Z\"\n            }\n        },\n        \"_count\": {\n            \"likes\": 0,\n            \"comments\": 0\n        },\n        \"videoMusic\": null\n    },\n    \"meta\": {\n        \"timestamp\": \"2026-02-02T20:58:27.295Z\"\n    }\n}"
+            }
+          ]
         }
       ]
     },
@@ -29261,7 +30007,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -29373,7 +30119,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -29571,7 +30317,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -29728,7 +30474,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -29878,7 +30624,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -30040,7 +30786,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -30202,7 +30948,7 @@
                   },
                   "status": "Created",
                   "code": 201,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -30365,7 +31111,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -30529,7 +31275,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -30693,7 +31439,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -30857,7 +31603,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -31007,7 +31753,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -31152,7 +31898,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -31292,7 +32038,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -31432,7 +32178,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -31569,7 +32315,7 @@
                   },
                   "status": "Unauthorized",
                   "code": 401,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -31725,7 +32471,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -31846,7 +32592,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -31967,7 +32713,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -32109,7 +32855,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",
@@ -32273,7 +33019,7 @@
                   },
                   "status": "OK",
                   "code": 200,
-                  "_postman_previewlanguage": "Text",
+                  "_postman_previewlanguage": null,
                   "header": [
                     {
                       "key": "Content-Security-Policy",

@@ -4,8 +4,10 @@ import { Link } from "react-router";
 import images from "../assets/images";
 import NotificationDetailModal from "./modal/NotificationDetailModal";
 import api from "../services/api";
+import { useAuth } from "../context/AuthProvider";
 
 const TopNavbar = ({ onMenuClick, userName = "Md. Sabbir Hossain Evan" }) => {
+  const { user } = useAuth();
   const [showNotifications, setShowNotifications] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [selectedNotification, setSelectedNotification] = useState(null);
@@ -26,12 +28,17 @@ const TopNavbar = ({ onMenuClick, userName = "Md. Sabbir Hossain Evan" }) => {
   const fetchNotifications = async (page) => {
     setIsLoadingNotifications(true);
     try {
-      const response = await api.get(`/provider/notifications?page=${page}&limit=${NOTIFICATIONS_PER_PAGE}`);
+      // Determine endpoint based on user role
+      let endpoint = "/api/v1/provider/notifications"; // Default
+      if (user?.role === "ADMIN") endpoint = "/api/v1/admin/notifications";
+      else if (user?.role === "CUSTOMER") endpoint = "/api/v1/customer/notifications";
+
+      const response = await api.get(`${endpoint}?page=${page}&limit=${NOTIFICATIONS_PER_PAGE}`);
       const apiData = response.data.data || [];
       const pagination = response.data.pagination || {};
 
       setNotifications(apiData);
-      setTotalPages(Math.ceil(pagination.total / NOTIFICATIONS_PER_PAGE));
+      setTotalPages(Math.ceil((pagination.total || 0) / NOTIFICATIONS_PER_PAGE));
     } catch (error) {
       console.error('Failed to fetch notifications:', error);
       setNotifications([]);
@@ -247,7 +254,7 @@ const TopNavbar = ({ onMenuClick, userName = "Md. Sabbir Hossain Evan" }) => {
               </div>
 
               <div className="p-2">
-                <Link to={"/dashboard/profile"}>
+                <Link to={"/profile"}>
                   <button className="w-full flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 rounded-xl transition-colors group">
                     <div className="p-2 bg-purple-100 text-[#6200EE] rounded-lg group-hover:bg-[#6200EE] group-hover:text-white transition-colors">
                       <UserCircle size={18} />
@@ -258,7 +265,7 @@ const TopNavbar = ({ onMenuClick, userName = "Md. Sabbir Hossain Evan" }) => {
                   </button>
                 </Link>
 
-                <Link to={"/dashboard/password"}>
+                <Link to={"/password"}>
                   <button className="w-full flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 rounded-xl transition-colors group">
                     <div className="p-2 bg-purple-100 text-[#6200EE] rounded-lg group-hover:bg-[#6200EE] group-hover:text-white transition-colors">
                       <Key size={18} />

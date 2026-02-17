@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import api from "../services/api";
+import adminService from "../services/adminService";
 import Loader from "./common/Loader";
 
 const UserTable = () => {
@@ -8,9 +8,11 @@ const UserTable = () => {
   useEffect(() => {
     const tableData = async () => {
       try {
-        const response = await api.get("/admin/users?page=1&limit=5");
+        const response = await adminService.getAllUsers({ page: 1, limit: 5 });
         if (response.success && response.data?.data) {
           setData(response.data.data);
+        } else if (response.data) {
+          setData(Array.isArray(response.data) ? response.data : (response.data.data || []));
         }
       } catch (error) {
         console.error("Failed to fetch table data:", error);

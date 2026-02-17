@@ -27,7 +27,6 @@ const UserList = () => {
   const usersPerPage = 10;
 
   // Fetch users from API
-  // Fetch users from API
   const fetchUsers = async () => {
     setIsLoading(true);
     setError(null);
