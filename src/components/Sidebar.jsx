@@ -3,15 +3,17 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { X, ShieldCheck, Settings, LogOut, AlertCircle } from 'lucide-react';
 import loginIcon from '../assets/sidebarLogo.svg';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthProvider';
+import images from '../assets/images';
 
 const Sidebar = ({ onLogout, isOpen, setIsOpen }) => {
   const navigate = useNavigate();
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
-
+  const { user } = useAuth();
   const userData = {
-    name: "Evan",
-    role: "Admin",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop"
+    name: user?.name,
+    role: user?.role,
+    avatar: user?.avatar
   };
 
   const menuItems = [
@@ -33,7 +35,6 @@ const Sidebar = ({ onLogout, isOpen, setIsOpen }) => {
 
   return (
     <>
-      {/* মেইন সাইডবার কোড */}
       {isOpen && (
         <div className="fixed inset-0 bg-black/30 z-40 lg:hidden" onClick={() => setIsOpen(false)} />
       )}
@@ -43,7 +44,6 @@ const Sidebar = ({ onLogout, isOpen, setIsOpen }) => {
         lg:translate-x-0 lg:static lg:mx-10 lg:my-10 
         ${isOpen ? 'translate-x-5 my-10 mx-5' : '-translate-x-full'}
       `}>
-
         <button className="lg:hidden absolute top-4 right-4 text-purple-600" onClick={() => setIsOpen(false)}>
           <X size={24} />
         </button>
@@ -82,7 +82,7 @@ const Sidebar = ({ onLogout, isOpen, setIsOpen }) => {
           <Link to={"/profile"} className="block">
             <div className="flex items-center p-2 gap-3 bg-white/40 rounded-2xl border border-transparent hover:border-[#6200EE] transition-all cursor-pointer group">
               <div className="w-10 h-10 rounded-full border-2 border-[#6200EE] overflow-hidden">
-                <img src={userData.avatar} alt="User" className="w-full h-full object-cover" />
+                <img src={images.avatar} alt="User" className="w-full h-full object-cover" />
               </div>
               <div className="flex flex-col overflow-hidden">
                 <span className="text-sm font-bold text-[#6200EE] truncate">{userData.name}</span>
@@ -91,10 +91,9 @@ const Sidebar = ({ onLogout, isOpen, setIsOpen }) => {
             </div>
           </Link>
 
-          {/* Sign Out বাটনে ক্লিক করলে মডাল ওপেন হবে */}
           <button
             onClick={() => setIsLogoutModalOpen(true)}
-            className="w-full flex items-center mt-2 p-3 text-[#6200EE] font-bold hover:text-red-500 hover:bg-red-50 rounded-2xl transition-all group"
+            className="w-full flex items-center mt-2 p-3 cursor-pointer text-[#6200EE] font-bold hover:text-red-500 hover:bg-red-50 rounded-2xl transition-all group"
           >
             <LogOut className="w-6 h-6 mr-3 group-hover:translate-x-1 transition-transform" />
             Sign Out
@@ -116,13 +115,13 @@ const Sidebar = ({ onLogout, isOpen, setIsOpen }) => {
               <div className="flex gap-3 w-full">
                 <button
                   onClick={() => setIsLogoutModalOpen(false)}
-                  className="flex-1 py-3 px-6 bg-gray-100 text-gray-600 font-bold rounded-2xl hover:bg-gray-200 transition-all"
+                  className="flex-1 py-3 px-6 bg-gray-100 text-gray-600 font-bold rounded-2xl hover:bg-gray-200 transition-all cursor-pointer"
                 >
                   No
                 </button>
                 <button
                   onClick={confirmLogout}
-                  className="flex-1 py-3 px-6 bg-red-500 text-white font-bold rounded-2xl shadow-lg shadow-red-200 hover:bg-red-600 active:translate-y-1 transition-all"
+                  className="flex-1 py-3 px-6 bg-red-500 text-white font-bold rounded-2xl shadow-lg shadow-red-200 cursor-pointer hover:bg-red-600 active:translate-y-1 transition-all"
                 >
                   Yes, Exit
                 </button>

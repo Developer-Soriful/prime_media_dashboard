@@ -145,12 +145,12 @@ const ProfileSection = () => {
                 loadingText="Saving..."
                 onClick={handleSave}
                 type="button"
-                className="bg-indigo-600 hover:bg-indigo-700 text-white"
+                className="bg-indigo-600 hover:bg-indigo-700 text-white cursor-pointer"
               />
               <button
                 onClick={() => setIsEditing(false)}
                 disabled={isSaving}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg font-medium bg-red-50 text-red-500 hover:bg-red-100 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg font-medium bg-red-50 text-red-500 hover:bg-red-100 transition-all disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
               >
                 <X className="w-4 h-4" /> Cancel
               </button>
@@ -158,7 +158,7 @@ const ProfileSection = () => {
           ) : (
             <button
               onClick={() => setIsEditing(true)}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg font-medium bg-indigo-50 text-indigo-600 hover:bg-indigo-100 transition-all"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg font-medium bg-indigo-50 text-indigo-600 hover:bg-indigo-100 transition-all cursor-pointer"
             >
               <Edit3 className="w-4 h-4" /> Edit Profile
             </button>

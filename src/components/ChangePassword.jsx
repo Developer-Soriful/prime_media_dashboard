@@ -55,7 +55,7 @@ const ChangePassword = () => {
 
         <button
           onClick={() => setIsEditing(!isEditing)}
-          className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all font-medium ${isEditing
+          className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all font-medium cursor-pointer ${isEditing
             ? 'bg-red-500 hover:bg-red-600 text-white'
             : 'bg-indigo-600 hover:bg-indigo-700 text-white'
             }`}
@@ -144,7 +144,7 @@ const ChangePassword = () => {
           <button
             onClick={handleSave}
             disabled={loading}
-            className="flex items-center justify-center gap-2 px-8 py-3 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-300 text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-indigo-200"
+            className="flex cursor-pointer items-center justify-center gap-2 px-8 py-3 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-300 text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-indigo-200"
           >
             {loading ? (
               <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />

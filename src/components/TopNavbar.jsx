@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Bell, Menu, UserCircle, Key, LogOut, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router";
 import images from "../assets/images";
@@ -6,7 +6,7 @@ import NotificationDetailModal from "./modal/NotificationDetailModal";
 import api from "../services/api";
 import { useAuth } from "../context/AuthProvider";
 
-const TopNavbar = ({ onMenuClick, userName = "Md. Sabbir Hossain Evan" }) => {
+const TopNavbar = ({ onMenuClick, userName = "Admin" }) => {
   const { user } = useAuth();
   const [showNotifications, setShowNotifications] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
@@ -255,7 +255,7 @@ const TopNavbar = ({ onMenuClick, userName = "Md. Sabbir Hossain Evan" }) => {
 
               <div className="p-2">
                 <Link to={"/profile"}>
-                  <button className="w-full flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 rounded-xl transition-colors group">
+                  <button className="w-full flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 rounded-xl transition-colors group cursor-pointer">
                     <div className="p-2 bg-purple-100 text-[#6200EE] rounded-lg group-hover:bg-[#6200EE] group-hover:text-white transition-colors">
                       <UserCircle size={18} />
                     </div>
@@ -266,7 +266,7 @@ const TopNavbar = ({ onMenuClick, userName = "Md. Sabbir Hossain Evan" }) => {
                 </Link>
 
                 <Link to={"/password"}>
-                  <button className="w-full flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 rounded-xl transition-colors group">
+                  <button className="w-full flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 rounded-xl transition-colors group cursor-pointer">
                     <div className="p-2 bg-purple-100 text-[#6200EE] rounded-lg group-hover:bg-[#6200EE] group-hover:text-white transition-colors">
                       <Key size={18} />
                     </div>
